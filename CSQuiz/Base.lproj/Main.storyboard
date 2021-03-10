@@ -113,6 +113,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Пропустить" id="25U-z7-rm6"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="firstButton" destination="Sox-Wp-sZB" id="g8m-Ar-k4F"/>
+                        <outlet property="fourthButton" destination="IR6-jV-v4b" id="5bh-YY-VBf"/>
+                        <outlet property="secondButton" destination="aj5-gE-yRV" id="mCU-er-mNO"/>
+                        <outlet property="thirdButton" destination="J7g-cl-yfp" id="42h-Rr-dAf"/>
                         <outlet property="titleLabel" destination="gOf-5e-MSX" id="tdY-pY-H5u"/>
                     </connections>
                 </viewController>
