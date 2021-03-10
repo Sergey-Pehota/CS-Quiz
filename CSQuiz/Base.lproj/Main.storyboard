@@ -28,6 +28,14 @@
                                     <segue destination="PaO-zI-r4U" kind="show" id="8ke-9N-1Bc"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i4g-PS-Gzi">
+                                <rect key="frame" x="20" y="661" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Легко"/>
+                                    <segment title="Сложно"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +49,7 @@
         <!--1/10-->
         <scene sceneID="FiE-4F-xDG">
             <objects>
-                <viewController id="PaO-zI-r4U" sceneMemberID="viewController">
+                <viewController id="PaO-zI-r4U" customClass="QuestionsViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfP-qD-mL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,8 +94,12 @@
                                     <segue destination="PaO-zI-r4U" kind="show" id="fet-MR-Dkm"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w1i-Q9-bcB">
+                                <rect key="frame" x="133" y="109" width="150" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Назовите основные принципы ООП" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-5e-MSX">
-                                <rect key="frame" x="57" y="182" width="300" height="145"/>
+                                <rect key="frame" x="58" y="191" width="300" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -97,7 +109,12 @@
                         <viewLayoutGuide key="safeArea" id="xpZ-xZ-1fG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="1/10" largeTitleDisplayMode="never" id="o5v-OB-kR4"/>
+                    <navigationItem key="navigationItem" title="1/10" largeTitleDisplayMode="never" id="o5v-OB-kR4">
+                        <barButtonItem key="rightBarButtonItem" title="Пропустить" id="25U-z7-rm6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleLabel" destination="gOf-5e-MSX" id="tdY-pY-H5u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcX-Xc-278" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,13 +128,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Pnc-eq-ZJX"/>
-                        <color key="backgroundColor" red="0.57554335446701832" green="0.13019116228987293" blue="0.13865928692634019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="История" image="square.and.arrow.down.on.square" catalog="system" id="Idw-u8-YME"/>
+                    <navigationItem key="navigationItem" title="История" largeTitleDisplayMode="always" id="0Iw-qx-30m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKq-Wb-vG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="-602"/>
+            <point key="canvasLocation" x="1623.1884057971015" y="-602.00892857142856"/>
         </scene>
         <!--Квиз-->
         <scene sceneID="l8B-0N-gkT">
@@ -149,9 +166,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9Hx-lj-iVS" kind="relationship" relationship="viewControllers" id="Idt-We-wdl"/>
+                        <segue destination="Ax0-6o-M1D" kind="relationship" relationship="viewControllers" id="Idt-We-wdl"/>
                         <segue destination="b7O-SV-XwY" kind="relationship" relationship="viewControllers" id="FxQ-iZ-rCj"/>
-                        <segue destination="8be-c7-vhV" kind="relationship" relationship="viewControllers" id="J1A-zA-vrD"/>
+                        <segue destination="gCI-w4-rf4" kind="relationship" relationship="viewControllers" id="J1A-zA-vrD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfx-6s-ar8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -165,14 +182,69 @@
                     <view key="view" contentMode="scaleToFill" id="VAm-Rl-Vyc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
+                                <rect key="frame" x="20" y="178" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-31-F32">
+                                <rect key="frame" x="18" y="255" width="376" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-sl-dOY">
+                                <rect key="frame" x="347" y="173" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nLg-No-vRw"/>
-                        <color key="backgroundColor" red="0.57554335446701832" green="0.20092102730818578" blue="0.40905823615725134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Настройки" image="square.and.pencil" catalog="system" id="VMO-by-Due"/>
+                    <navigationItem key="navigationItem" title="Настройки" largeTitleDisplayMode="always" id="Lli-vw-JMo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGs-lh-Dy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="765"/>
+            <point key="canvasLocation" x="1613.0434782608697" y="764.73214285714278"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="JhT-FF-zeg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gCI-w4-rf4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="square.and.pencil" catalog="system" id="VMO-by-Due"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OlT-L6-MUR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8be-c7-vhV" kind="relationship" relationship="rootViewController" id="rb1-Pq-Giz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKz-2V-8Jq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702.89855072463774" y="764.73214285714278"/>
+        </scene>
+        <!--История-->
+        <scene sceneID="gPC-lB-LmM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ax0-6o-M1D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="История" image="square.and.arrow.down.on.square" catalog="system" id="Idw-u8-YME"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Bdu-kh-qBD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Hx-lj-iVS" kind="relationship" relationship="rootViewController" id="NQW-MV-Lfd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rom-mv-Z5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713.04347826086962" y="-602.00892857142856"/>
         </scene>
     </scenes>
     <resources>
