@@ -7,7 +7,8 @@
 
 import UIKit
 
-class Model {
+// Оставляем класс в качестве примера, в данном случае лучще использовать структуру
+class QuestionModel {
     let question: String
     let answers: [String]
     
@@ -17,7 +18,7 @@ class Model {
     }
 }
 
-class QuestionsViewController: UIViewController {
+class QuestionViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
    
     @IBOutlet weak var firstButton: UIButton!
@@ -25,8 +26,9 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
     
-    let model = Model(question: "Перечислите основные принципы ООП",
-                      answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
+    let model = QuestionModel(
+        question: "Перечислите основные принципы ООП",
+        answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
