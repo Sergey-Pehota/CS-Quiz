@@ -182,7 +182,7 @@
         <!--Настройки-->
         <scene sceneID="3xi-LG-mfr">
             <objects>
-                <viewController id="8be-c7-vhV" sceneMemberID="viewController">
+                <viewController id="8be-c7-vhV" customClass="SettingsViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VAm-Rl-Vyc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="Настройки" largeTitleDisplayMode="always" id="Lli-vw-JMo"/>
+                    <connections>
+                        <outlet property="soundLabel" destination="4RN-65-pus" id="CDA-qw-NDh"/>
+                        <outlet property="soundSwitch" destination="rFq-sl-dOY" id="ZNo-gV-gjp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGs-lh-Dy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
