@@ -65,8 +65,7 @@
 				18023AA725F3ABF00080FEDC /* SceneDelegate.swift */,
 				18023AA925F3ABF00080FEDC /* ViewController.swift */,
 				18023AAB25F3ABF00080FEDC /* Main.storyboard */,
-				18023AAE25F3ABF20080FEDC /* Assets.xcassets */,
-				18023AB025F3ABF20080FEDC /* LaunchScreen.storyboard */,
+				A514BD5925FE1AA80093A1F2 /* Resources */,
 				A5F5AB3725F940200041B7BA /* QuestionViewController.swift */,
 				A50F35A325FA85E700208519 /* SettingsViewController.swift */,
 			);
@@ -79,6 +78,15 @@
 				18023AB325F3ABF20080FEDC /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A514BD5925FE1AA80093A1F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18023AAE25F3ABF20080FEDC /* Assets.xcassets */,
+				18023AB025F3ABF20080FEDC /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
