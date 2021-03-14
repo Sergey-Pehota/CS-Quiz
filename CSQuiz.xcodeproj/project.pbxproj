@@ -60,17 +60,25 @@
 		18023AA425F3ABF00080FEDC /* CSQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				A514BD5525FE19A90093A1F2 /* Supporting Files */,
 				18023AA525F3ABF00080FEDC /* AppDelegate.swift */,
 				18023AA725F3ABF00080FEDC /* SceneDelegate.swift */,
 				18023AA925F3ABF00080FEDC /* ViewController.swift */,
 				18023AAB25F3ABF00080FEDC /* Main.storyboard */,
 				18023AAE25F3ABF20080FEDC /* Assets.xcassets */,
 				18023AB025F3ABF20080FEDC /* LaunchScreen.storyboard */,
-				18023AB325F3ABF20080FEDC /* Info.plist */,
 				A5F5AB3725F940200041B7BA /* QuestionViewController.swift */,
 				A50F35A325FA85E700208519 /* SettingsViewController.swift */,
 			);
 			path = CSQuiz;
+			sourceTree = "<group>";
+		};
+		A514BD5525FE19A90093A1F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18023AB325F3ABF20080FEDC /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,8 +303,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34Z4454BBG;
-				INFOPLIST_FILE = CSQuiz/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/CSQuiz/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,8 +323,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34Z4454BBG;
-				INFOPLIST_FILE = CSQuiz/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/CSQuiz/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
