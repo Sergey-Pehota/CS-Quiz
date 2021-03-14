@@ -53,7 +53,7 @@
         <!--1/10-->
         <scene sceneID="FiE-4F-xDG">
             <objects>
-                <viewController id="PaO-zI-r4U" customClass="QuestionsViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PaO-zI-r4U" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfP-qD-mL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,11 +117,11 @@
                         <barButtonItem key="rightBarButtonItem" title="Пропустить" id="25U-z7-rm6"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="firstButton" destination="Sox-Wp-sZB" id="g8m-Ar-k4F"/>
-                        <outlet property="fourthButton" destination="IR6-jV-v4b" id="5bh-YY-VBf"/>
-                        <outlet property="secondButton" destination="aj5-gE-yRV" id="mCU-er-mNO"/>
-                        <outlet property="thirdButton" destination="J7g-cl-yfp" id="42h-Rr-dAf"/>
-                        <outlet property="titleLabel" destination="gOf-5e-MSX" id="tdY-pY-H5u"/>
+                        <outlet property="firstButton" destination="Sox-Wp-sZB" id="bgL-M1-gWr"/>
+                        <outlet property="fourthButton" destination="IR6-jV-v4b" id="IdJ-h9-x1x"/>
+                        <outlet property="secondButton" destination="aj5-gE-yRV" id="2ET-FL-ELC"/>
+                        <outlet property="thirdButton" destination="J7g-cl-yfp" id="64B-u0-drw"/>
+                        <outlet property="titleLabel" destination="gOf-5e-MSX" id="rDN-AX-pyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcX-Xc-278" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
