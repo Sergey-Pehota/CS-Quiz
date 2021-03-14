@@ -61,13 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				A514BD5525FE19A90093A1F2 /* Supporting Files */,
-				18023AA525F3ABF00080FEDC /* AppDelegate.swift */,
-				18023AA725F3ABF00080FEDC /* SceneDelegate.swift */,
-				18023AA925F3ABF00080FEDC /* ViewController.swift */,
-				18023AAB25F3ABF00080FEDC /* Main.storyboard */,
 				A514BD5925FE1AA80093A1F2 /* Resources */,
-				A5F5AB3725F940200041B7BA /* QuestionViewController.swift */,
-				A50F35A325FA85E700208519 /* SettingsViewController.swift */,
+				A514BD5B25FE1B3E0093A1F2 /* Source */,
 			);
 			path = CSQuiz;
 			sourceTree = "<group>";
@@ -87,6 +82,19 @@
 				18023AB025F3ABF20080FEDC /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A514BD5B25FE1B3E0093A1F2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				18023AA525F3ABF00080FEDC /* AppDelegate.swift */,
+				18023AA725F3ABF00080FEDC /* SceneDelegate.swift */,
+				18023AA925F3ABF00080FEDC /* ViewController.swift */,
+				18023AAB25F3ABF00080FEDC /* Main.storyboard */,
+				A5F5AB3725F940200041B7BA /* QuestionViewController.swift */,
+				A50F35A325FA85E700208519 /* SettingsViewController.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
