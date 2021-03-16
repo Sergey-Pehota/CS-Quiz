@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18023AA625F3ABF00080FEDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18023AA525F3ABF00080FEDC /* AppDelegate.swift */; };
-		18023AA825F3ABF00080FEDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18023AA725F3ABF00080FEDC /* SceneDelegate.swift */; };
 		18023AAA25F3ABF00080FEDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18023AA925F3ABF00080FEDC /* ViewController.swift */; };
 		18023AAD25F3ABF00080FEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18023AAB25F3ABF00080FEDC /* Main.storyboard */; };
 		18023AAF25F3ABF20080FEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18023AAE25F3ABF20080FEDC /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		18023AA225F3ABF00080FEDC /* CSQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18023AA525F3ABF00080FEDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18023AA725F3ABF00080FEDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		18023AA925F3ABF00080FEDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18023AAC25F3ABF00080FEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18023AAE25F3ABF20080FEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			children = (
 				18023AA525F3ABF00080FEDC /* AppDelegate.swift */,
 				A514BD5E25FE1D1B0093A1F2 /* QuizViewController.swift */,
-				18023AA725F3ABF00080FEDC /* SceneDelegate.swift */,
 				18023AA925F3ABF00080FEDC /* ViewController.swift */,
 				18023AAB25F3ABF00080FEDC /* Main.storyboard */,
 				A5F5AB3725F940200041B7BA /* QuestionViewController.swift */,
@@ -175,7 +172,6 @@
 				A5F5AB3825F940210041B7BA /* QuestionViewController.swift in Sources */,
 				A514BD5F25FE1D1B0093A1F2 /* QuizViewController.swift in Sources */,
 				A50F35A425FA85E700208519 /* SettingsViewController.swift in Sources */,
-				18023AA825F3ABF00080FEDC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
