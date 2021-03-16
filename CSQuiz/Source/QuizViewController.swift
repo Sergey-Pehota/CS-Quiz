@@ -27,6 +27,8 @@ class QuizViewController: UIViewController {
         complexitySegmentedControl.addTarget(self, action: #selector(handleComplexitySegmentedControlValueChanged(_:)), for: .valueChanged)
         
         startButton.setTitle(model.startTitle, for: .normal)
+        
+        startButton.layer.cornerRadius = 12
     }
     
     @objc func handleComplexitySegmentedControlValueChanged(_ sender: UISegmentedControl) {

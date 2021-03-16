@@ -39,5 +39,13 @@ class QuestionViewController: UIViewController {
         secondButton.setTitle(model.answers[1], for: .normal)
         thirdButton.setTitle(model.answers[2], for: .normal)
         fourthButton.setTitle(model.answers[3], for: .normal)
+    
+        let buttons = [firstButton, secondButton, thirdButton, fourthButton]
+        for button in buttons {
+            button?.layer.cornerRadius = 12
+            button?.layer.borderWidth = 1
+            button?.layer.borderColor = UIColor.blue.cgColor
+            button?.backgroundColor = .clear
+        }
     }
 }
