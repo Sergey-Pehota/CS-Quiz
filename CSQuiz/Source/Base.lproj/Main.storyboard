@@ -64,7 +64,7 @@
         <!--1/10-->
         <scene sceneID="FiE-4F-xDG">
             <objects>
-                <viewController id="PaO-zI-r4U" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="PaO-zI-r4U" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfP-qD-mL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
