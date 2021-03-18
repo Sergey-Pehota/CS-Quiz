@@ -13,6 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = makeQuestionViewController()
+        
+        return true
+    }
+    
+    func makeQuestionViewController() -> QuestionViewController {
         let model = QuestionModel(
             question: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
@@ -21,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.model = model
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = questionViewController
-        
-        return true
+        return questionViewController
     }
+    
+    // makeQuizViewController
+    // makeSettingViewController
 }
+
