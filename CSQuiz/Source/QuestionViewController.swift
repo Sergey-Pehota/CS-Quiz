@@ -26,9 +26,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
     
-    let model = QuestionModel(
-        question: "Перечислите основные принципы ООП",
-        answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
+    var model: QuestionModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
