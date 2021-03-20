@@ -33,17 +33,14 @@ class QuestionViewController: UIViewController {
         
         titleLabel.text = model.question
         
-        firstButton.setTitle(model.answers[0], for: .normal)
-        secondButton.setTitle(model.answers[1], for: .normal)
-        thirdButton.setTitle(model.answers[2], for: .normal)
-        fourthButton.setTitle(model.answers[3], for: .normal)
-    
-        let buttons = [firstButton, secondButton, thirdButton, fourthButton]
-        for button in buttons {
-            button?.layer.cornerRadius = 12
-            button?.layer.borderWidth = 1
-            button?.layer.borderColor = UIColor.blue.cgColor
-            button?.backgroundColor = .clear
-        }
+        [firstButton, secondButton, thirdButton, fourthButton]
+            .enumerated()
+            .forEach { index, button in
+                button?.setTitle(model.answers[index], for: .normal)
+                button?.layer.cornerRadius = 12
+                button?.layer.borderWidth = 1
+                button?.layer.borderColor = UIColor.blue.cgColor
+                button?.backgroundColor = .clear
+            }
     }
 }
