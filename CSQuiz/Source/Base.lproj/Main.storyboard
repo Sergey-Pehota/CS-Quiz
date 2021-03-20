@@ -17,24 +17,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
-                                <rect key="frame" x="20" y="178" width="147" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-31-F32">
-                                <rect key="frame" x="18" y="255" width="376" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-sl-dOY">
-                                <rect key="frame" x="347" y="173" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="scO-Al-HyY">
+                                <rect key="frame" x="0.0" y="108" width="414" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-On-eCu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
+                                                <rect key="frame" x="20" y="27" width="305" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-sl-dOY">
+                                                <rect key="frame" x="345" y="24.5" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="4RN-65-pus" firstAttribute="leading" secondItem="Eep-On-eCu" secondAttribute="leading" constant="20" id="4Qv-cw-AKa"/>
+                                            <constraint firstItem="4RN-65-pus" firstAttribute="centerY" secondItem="Eep-On-eCu" secondAttribute="centerY" id="7qS-1p-trX"/>
+                                            <constraint firstAttribute="trailing" secondItem="rFq-sl-dOY" secondAttribute="trailing" constant="20" id="BnU-SL-QZZ"/>
+                                            <constraint firstItem="rFq-sl-dOY" firstAttribute="leading" secondItem="4RN-65-pus" secondAttribute="trailing" constant="20" id="VgU-Cs-NN3"/>
+                                            <constraint firstItem="rFq-sl-dOY" firstAttribute="centerY" secondItem="Eep-On-eCu" secondAttribute="centerY" id="q2j-Ae-auu"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-Ho-CQZ">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подсказки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-I4-SNS">
+                                                <rect key="frame" x="20" y="27" width="305" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r23-yU-YuC">
+                                                <rect key="frame" x="345" y="24.5" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gTs-I4-SNS" firstAttribute="leading" secondItem="dsq-Ho-CQZ" secondAttribute="leading" constant="20" id="HWy-Qd-A3h"/>
+                                            <constraint firstItem="r23-yU-YuC" firstAttribute="leading" secondItem="gTs-I4-SNS" secondAttribute="trailing" constant="20" id="JJw-71-drR"/>
+                                            <constraint firstItem="r23-yU-YuC" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="LL3-Il-OCI"/>
+                                            <constraint firstAttribute="trailing" secondItem="r23-yU-YuC" secondAttribute="trailing" constant="20" id="czK-1x-xDM"/>
+                                            <constraint firstItem="gTs-I4-SNS" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="uaB-GO-SMm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="egO-ic-g5W"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nLg-No-vRw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="scO-Al-HyY" firstAttribute="top" secondItem="nLg-No-vRw" secondAttribute="top" constant="64" id="ONK-Nc-Ybh"/>
+                            <constraint firstItem="scO-Al-HyY" firstAttribute="leading" secondItem="nLg-No-vRw" secondAttribute="leading" id="RCE-r2-YMf"/>
+                            <constraint firstItem="scO-Al-HyY" firstAttribute="trailing" secondItem="nLg-No-vRw" secondAttribute="trailing" id="uz2-1L-gGo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Настройки" largeTitleDisplayMode="always" id="Lli-vw-JMo"/>
                     <connections>
@@ -44,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGs-lh-Dy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1651" y="76"/>
+            <point key="canvasLocation" x="1650.7246376811595" y="75.669642857142847"/>
         </scene>
         <!--Квиз-->
         <scene sceneID="veK-kj-MLA">
