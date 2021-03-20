@@ -20,19 +20,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func makeQuizViewController() -> QuizViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
+
+        return quizViewController
+    }
+    
     func makeQuestionViewController() -> QuestionViewController {
         let model = QuestionModel(
             question: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.model = model
-        
+
         return questionViewController
     }
     
-    // makeQuizViewController
-    // makeSettingViewController
+    func makeSettingsViewController() -> SettingsViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingsViewController = storyboard.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController
+
+        return settingsViewController
+    }
 }
 
