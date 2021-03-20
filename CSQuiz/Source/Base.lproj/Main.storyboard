@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -9,62 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Квиз-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="QuizViewController" id="BYZ-38-t0r" customClass="QuizViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i4g-PS-Gzi">
-                                <rect key="frame" x="20" y="661" width="374" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Легко"/>
-                                    <segment title="Сложно"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sIA-UJ-fpx">
-                                <rect key="frame" x="20" y="719" width="374" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Начать">
-                                            <attributes>
-                                                <color key="NSColor" systemColor="systemBackgroundColor"/>
-                                                <font key="NSFont" metaFont="system" size="32"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Квиз" largeTitleDisplayMode="always" id="tIN-dm-mnC"/>
-                    <connections>
-                        <outlet property="complexitySegmentedControl" destination="i4g-PS-Gzi" id="RP4-W6-mBr"/>
-                        <outlet property="startButton" destination="sIA-UJ-fpx" id="SG2-Ek-Cz4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1614.4927536231885" y="76.339285714285708"/>
-        </scene>
         <!--1/10-->
         <scene sceneID="FiE-4F-xDG">
             <objects>
                 <viewController storyboardIdentifier="QuestionViewController" hidesBottomBarWhenPushed="YES" id="PaO-zI-r4U" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfP-qD-mL4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sox-Wp-sZB">
@@ -142,7 +92,7 @@
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="8be-c7-vhV" customClass="SettingsViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VAm-Rl-Vyc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
@@ -172,7 +122,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGs-lh-Dy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2542" y="76"/>
+            <point key="canvasLocation" x="1651" y="76"/>
+        </scene>
+        <!--Квиз-->
+        <scene sceneID="veK-kj-MLA">
+            <objects>
+                <viewController storyboardIdentifier="QuizViewController" id="SK2-qK-MSf" customClass="QuizViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d1M-Hj-CQE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ApY-0p-AAg">
+                                <rect key="frame" x="20" y="632" width="374" height="64"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="EnB-dr-UCU"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Начать">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="systemBackgroundColor"/>
+                                                <font key="NSFont" metaFont="system" size="32"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-9f-hmT">
+                                <rect key="frame" x="20" y="568" width="374" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="taw-3E-ih3"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Легко"/>
+                                    <segment title="Сложно"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Na-sa-dYC"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ApY-0p-AAg" firstAttribute="top" secondItem="NX6-9f-hmT" secondAttribute="bottom" constant="24" id="1WK-pe-ORv"/>
+                            <constraint firstItem="ApY-0p-AAg" firstAttribute="leading" secondItem="7Na-sa-dYC" secondAttribute="leading" constant="20" id="2eb-dn-PUt"/>
+                            <constraint firstItem="7Na-sa-dYC" firstAttribute="trailing" secondItem="ApY-0p-AAg" secondAttribute="trailing" constant="20" id="5gr-cG-fs4"/>
+                            <constraint firstItem="7Na-sa-dYC" firstAttribute="bottom" secondItem="ApY-0p-AAg" secondAttribute="bottom" constant="40" id="FmQ-3S-sye"/>
+                            <constraint firstItem="7Na-sa-dYC" firstAttribute="trailing" secondItem="NX6-9f-hmT" secondAttribute="trailing" constant="20" id="fui-N1-X7n"/>
+                            <constraint firstItem="NX6-9f-hmT" firstAttribute="leading" secondItem="7Na-sa-dYC" secondAttribute="leading" constant="20" id="jIg-nw-IaJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Квиз" largeTitleDisplayMode="always" id="f9b-Tv-2lR"/>
+                    <connections>
+                        <outlet property="complexitySegmentedControl" destination="NX6-9f-hmT" id="xlT-uA-dI4"/>
+                        <outlet property="startButton" destination="ApY-0p-AAg" id="uwg-eG-n5u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJz-fT-VKu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-139" y="76"/>
         </scene>
     </scenes>
     <resources>
