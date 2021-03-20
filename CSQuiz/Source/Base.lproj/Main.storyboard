@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -9,90 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--1/10-->
-        <scene sceneID="FiE-4F-xDG">
-            <objects>
-                <viewController storyboardIdentifier="QuestionViewController" hidesBottomBarWhenPushed="YES" id="PaO-zI-r4U" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vfP-qD-mL4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sox-Wp-sZB">
-                                <rect key="frame" x="21" y="445" width="374" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Наследование"/>
-                                <connections>
-                                    <segue destination="PaO-zI-r4U" kind="show" id="qRY-hl-XNx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-gE-yRV">
-                                <rect key="frame" x="20" y="536" width="374" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Инкапсуляция"/>
-                                <connections>
-                                    <segue destination="PaO-zI-r4U" kind="show" id="uKS-J6-hMW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7g-cl-yfp">
-                                <rect key="frame" x="21" y="623" width="374" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Полиморфизм"/>
-                                <connections>
-                                    <segue destination="PaO-zI-r4U" kind="show" id="obZ-wW-fG2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR6-jV-v4b">
-                                <rect key="frame" x="21" y="714" width="374" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Всё выше перечисленное"/>
-                                <connections>
-                                    <segue destination="PaO-zI-r4U" kind="show" id="fet-MR-Dkm"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w1i-Q9-bcB">
-                                <rect key="frame" x="133" y="109" width="150" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Назовите основные принципы ООП" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-5e-MSX">
-                                <rect key="frame" x="58" y="191" width="300" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xpZ-xZ-1fG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="1/10" largeTitleDisplayMode="never" id="o5v-OB-kR4">
-                        <barButtonItem key="rightBarButtonItem" title="Пропустить" id="25U-z7-rm6"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="firstButton" destination="Sox-Wp-sZB" id="bgL-M1-gWr"/>
-                        <outlet property="fourthButton" destination="IR6-jV-v4b" id="IdJ-h9-x1x"/>
-                        <outlet property="secondButton" destination="aj5-gE-yRV" id="2ET-FL-ELC"/>
-                        <outlet property="thirdButton" destination="J7g-cl-yfp" id="64B-u0-drw"/>
-                        <outlet property="titleLabel" destination="gOf-5e-MSX" id="rDN-AX-pyC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pcX-Xc-278" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="709" y="76"/>
-        </scene>
         <!--Настройки-->
         <scene sceneID="3xi-LG-mfr">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="8be-c7-vhV" customClass="SettingsViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VAm-Rl-Vyc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
@@ -129,11 +51,11 @@
             <objects>
                 <viewController storyboardIdentifier="QuizViewController" id="SK2-qK-MSf" customClass="QuizViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d1M-Hj-CQE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ApY-0p-AAg">
-                                <rect key="frame" x="20" y="632" width="374" height="64"/>
+                                <rect key="frame" x="20" y="758" width="374" height="64"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="EnB-dr-UCU"/>
@@ -155,7 +77,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-9f-hmT">
-                                <rect key="frame" x="20" y="568" width="374" height="41"/>
+                                <rect key="frame" x="20" y="694" width="374" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="taw-3E-ih3"/>
                                 </constraints>
@@ -185,6 +107,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJz-fT-VKu" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-139" y="76"/>
+        </scene>
+        <!--1/10-->
+        <scene sceneID="nE4-6M-6ro">
+            <objects>
+                <viewController storyboardIdentifier="QuestionViewController" hidesBottomBarWhenPushed="YES" id="9c6-cJ-msg" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYL-oj-ust">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-hR-GCp">
+                                <rect key="frame" x="0.0" y="80" width="414" height="381"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назовите основные принципы ООП" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQP-oc-6Hq">
+                                        <rect key="frame" x="20" y="154.5" width="374" height="72"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="sQP-oc-6Hq" firstAttribute="centerY" secondItem="XKH-hR-GCp" secondAttribute="centerY" id="5DA-bf-g6q"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQP-oc-6Hq" secondAttribute="trailing" constant="20" id="R7C-vF-Ltf"/>
+                                    <constraint firstItem="sQP-oc-6Hq" firstAttribute="leading" secondItem="XKH-hR-GCp" secondAttribute="leading" constant="20" id="Vqx-lu-h5f"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-Kp-DZ9">
+                                <rect key="frame" x="132" y="76" width="150" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="jGV-Cl-54r"/>
+                                </constraints>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oEL-hq-i2u">
+                                <rect key="frame" x="20" y="461" width="374" height="381"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq5-SH-yno">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Наследование"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ben-LE-DCo">
+                                        <rect key="frame" x="0.0" y="100.5" width="374" height="80"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Инкапсуляция"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-Wo-ujV">
+                                        <rect key="frame" x="0.0" y="200.5" width="374" height="80.5"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Полиморфизм"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-tg-6iO">
+                                        <rect key="frame" x="0.0" y="301" width="374" height="80"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Всё выше перечисленное"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Kj-Mq-jsD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XKH-hR-GCp" firstAttribute="leading" secondItem="2Kj-Mq-jsD" secondAttribute="leading" id="FcO-1s-5ng"/>
+                            <constraint firstItem="bNo-Kp-DZ9" firstAttribute="top" secondItem="2Kj-Mq-jsD" secondAttribute="top" constant="32" id="IYN-SC-uTH"/>
+                            <constraint firstItem="bNo-Kp-DZ9" firstAttribute="centerX" secondItem="cYL-oj-ust" secondAttribute="centerX" id="JlP-gb-j9a"/>
+                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="trailing" secondItem="oEL-hq-i2u" secondAttribute="trailing" constant="20" id="RV3-gM-o1e"/>
+                            <constraint firstItem="XKH-hR-GCp" firstAttribute="height" secondItem="oEL-hq-i2u" secondAttribute="height" id="ciF-Hk-nlz"/>
+                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="trailing" secondItem="XKH-hR-GCp" secondAttribute="trailing" id="eR1-6N-6LR"/>
+                            <constraint firstItem="oEL-hq-i2u" firstAttribute="leading" secondItem="2Kj-Mq-jsD" secondAttribute="leading" constant="20" id="ikk-9k-ybB"/>
+                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="bottom" secondItem="oEL-hq-i2u" secondAttribute="bottom" constant="20" id="kAa-mi-QSQ"/>
+                            <constraint firstItem="oEL-hq-i2u" firstAttribute="top" secondItem="XKH-hR-GCp" secondAttribute="bottom" id="qly-EH-W5b"/>
+                            <constraint firstItem="XKH-hR-GCp" firstAttribute="top" secondItem="bNo-Kp-DZ9" secondAttribute="bottom" id="ycl-hl-QUc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="1/10" largeTitleDisplayMode="never" id="mlM-KW-f2K">
+                        <barButtonItem key="rightBarButtonItem" title="Пропустить" id="xHv-YB-3t8"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleLabel" destination="sQP-oc-6Hq" id="n7I-es-gfP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KmF-T5-hPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="76"/>
         </scene>
     </scenes>
     <resources>
