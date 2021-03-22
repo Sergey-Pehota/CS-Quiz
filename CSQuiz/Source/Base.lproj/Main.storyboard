@@ -17,65 +17,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="scO-Al-HyY">
-                                <rect key="frame" x="0.0" y="108" width="414" height="180"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUf-rk-c7F">
+                                <rect key="frame" x="20" y="88" width="374" height="220"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-On-eCu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="scO-Al-HyY">
+                                        <rect key="frame" x="20" y="20" width="334" height="180"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
-                                                <rect key="frame" x="20" y="27" width="305" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-sl-dOY">
-                                                <rect key="frame" x="345" y="24.5" width="51" height="31"/>
-                                            </switch>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-On-eCu">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Звук в игре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-65-pus">
+                                                        <rect key="frame" x="20" y="27" width="225" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-sl-dOY">
+                                                        <rect key="frame" x="265" y="24.5" width="51" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="4RN-65-pus" firstAttribute="leading" secondItem="Eep-On-eCu" secondAttribute="leading" constant="20" id="4Qv-cw-AKa"/>
+                                                    <constraint firstItem="4RN-65-pus" firstAttribute="centerY" secondItem="Eep-On-eCu" secondAttribute="centerY" id="7qS-1p-trX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rFq-sl-dOY" secondAttribute="trailing" constant="20" id="BnU-SL-QZZ"/>
+                                                    <constraint firstItem="rFq-sl-dOY" firstAttribute="leading" secondItem="4RN-65-pus" secondAttribute="trailing" constant="20" id="VgU-Cs-NN3"/>
+                                                    <constraint firstItem="rFq-sl-dOY" firstAttribute="centerY" secondItem="Eep-On-eCu" secondAttribute="centerY" id="q2j-Ae-auu"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-Ho-CQZ">
+                                                <rect key="frame" x="0.0" y="100" width="334" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подсказки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-I4-SNS">
+                                                        <rect key="frame" x="20" y="27" width="225" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r23-yU-YuC">
+                                                        <rect key="frame" x="265" y="24.5" width="51" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="gTs-I4-SNS" firstAttribute="leading" secondItem="dsq-Ho-CQZ" secondAttribute="leading" constant="20" id="HWy-Qd-A3h"/>
+                                                    <constraint firstItem="r23-yU-YuC" firstAttribute="leading" secondItem="gTs-I4-SNS" secondAttribute="trailing" constant="20" id="JJw-71-drR"/>
+                                                    <constraint firstItem="r23-yU-YuC" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="LL3-Il-OCI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="r23-yU-YuC" secondAttribute="trailing" constant="20" id="czK-1x-xDM"/>
+                                                    <constraint firstItem="gTs-I4-SNS" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="uaB-GO-SMm"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="4RN-65-pus" firstAttribute="leading" secondItem="Eep-On-eCu" secondAttribute="leading" constant="20" id="4Qv-cw-AKa"/>
-                                            <constraint firstItem="4RN-65-pus" firstAttribute="centerY" secondItem="Eep-On-eCu" secondAttribute="centerY" id="7qS-1p-trX"/>
-                                            <constraint firstAttribute="trailing" secondItem="rFq-sl-dOY" secondAttribute="trailing" constant="20" id="BnU-SL-QZZ"/>
-                                            <constraint firstItem="rFq-sl-dOY" firstAttribute="leading" secondItem="4RN-65-pus" secondAttribute="trailing" constant="20" id="VgU-Cs-NN3"/>
-                                            <constraint firstItem="rFq-sl-dOY" firstAttribute="centerY" secondItem="Eep-On-eCu" secondAttribute="centerY" id="q2j-Ae-auu"/>
+                                            <constraint firstAttribute="height" constant="180" id="egO-ic-g5W"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-Ho-CQZ">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="80"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подсказки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-I4-SNS">
-                                                <rect key="frame" x="20" y="27" width="305" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r23-yU-YuC">
-                                                <rect key="frame" x="345" y="24.5" width="51" height="31"/>
-                                            </switch>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="gTs-I4-SNS" firstAttribute="leading" secondItem="dsq-Ho-CQZ" secondAttribute="leading" constant="20" id="HWy-Qd-A3h"/>
-                                            <constraint firstItem="r23-yU-YuC" firstAttribute="leading" secondItem="gTs-I4-SNS" secondAttribute="trailing" constant="20" id="JJw-71-drR"/>
-                                            <constraint firstItem="r23-yU-YuC" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="LL3-Il-OCI"/>
-                                            <constraint firstAttribute="trailing" secondItem="r23-yU-YuC" secondAttribute="trailing" constant="20" id="czK-1x-xDM"/>
-                                            <constraint firstItem="gTs-I4-SNS" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="uaB-GO-SMm"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="egO-ic-g5W"/>
+                                    <constraint firstAttribute="height" constant="220" id="514-eU-ZUC"/>
+                                    <constraint firstItem="scO-Al-HyY" firstAttribute="top" secondItem="HUf-rk-c7F" secondAttribute="top" constant="20" symbolic="YES" id="6XZ-zi-BWm"/>
+                                    <constraint firstItem="scO-Al-HyY" firstAttribute="leading" secondItem="HUf-rk-c7F" secondAttribute="leading" constant="20" symbolic="YES" id="6dR-7E-sfO"/>
+                                    <constraint firstAttribute="trailing" secondItem="scO-Al-HyY" secondAttribute="trailing" constant="20" symbolic="YES" id="kkc-V1-64d"/>
                                 </constraints>
-                            </stackView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nLg-No-vRw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="scO-Al-HyY" firstAttribute="top" secondItem="nLg-No-vRw" secondAttribute="top" constant="64" id="ONK-Nc-Ybh"/>
-                            <constraint firstItem="scO-Al-HyY" firstAttribute="leading" secondItem="nLg-No-vRw" secondAttribute="leading" id="RCE-r2-YMf"/>
-                            <constraint firstItem="scO-Al-HyY" firstAttribute="trailing" secondItem="nLg-No-vRw" secondAttribute="trailing" id="uz2-1L-gGo"/>
+                            <constraint firstAttribute="trailing" secondItem="HUf-rk-c7F" secondAttribute="trailing" constant="20" id="4sm-Dm-50a"/>
+                            <constraint firstItem="HUf-rk-c7F" firstAttribute="top" secondItem="nLg-No-vRw" secondAttribute="top" constant="44" id="Tfh-ww-au7"/>
+                            <constraint firstItem="HUf-rk-c7F" firstAttribute="leading" secondItem="VAm-Rl-Vyc" secondAttribute="leading" constant="20" id="msJ-zV-fX2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Настройки" largeTitleDisplayMode="always" id="Lli-vw-JMo"/>
@@ -188,25 +205,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Наследование"/>
+                                        <state key="normal" title="Наследование">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ben-LE-DCo">
                                         <rect key="frame" x="0.0" y="100.5" width="374" height="80"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Инкапсуляция"/>
+                                        <state key="normal" title="Инкапсуляция">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-Wo-ujV">
                                         <rect key="frame" x="0.0" y="200.5" width="374" height="80.5"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Полиморфизм"/>
+                                        <state key="normal" title="Полиморфизм">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-tg-6iO">
                                         <rect key="frame" x="0.0" y="301" width="374" height="80"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Всё выше перечисленное"/>
+                                        <state key="normal" title="Всё выше перечисленное">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -241,6 +266,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
