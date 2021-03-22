@@ -15,19 +15,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = makeQuestionViewController()
+        window?.rootViewController = makeTabBarController()
         
         return true
     }
     
-    func makeQuizViewController() -> QuizViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
-
-        return quizViewController
+    func makeTabBarController() -> UIViewController {
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([makeQuizViewController(), makeSettingsViewController()], animated: false)
+        
+        return tabBarController
     }
     
-    func makeQuestionViewController() -> QuestionViewController {
+    
+    func makeQuizViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
+        quizViewController.title = "Квиз"
+        let navigationController = UINavigationController(rootViewController: quizViewController)
+
+        return navigationController
+    }
+    
+    func makeQuestionViewController() -> UIViewController {
         let model = QuestionModel(
             question: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
@@ -35,15 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.model = model
+        let navigationController = UINavigationController(rootViewController: questionViewController)
 
-        return questionViewController
+        return navigationController
     }
     
-    func makeSettingsViewController() -> SettingsViewController {
+    func makeSettingsViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let settingsViewController = storyboard.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController
+        settingsViewController.title = "Настройки"
+        let navigationController = UINavigationController(rootViewController: settingsViewController)
 
-        return settingsViewController
+        return navigationController
     }
 }
 
