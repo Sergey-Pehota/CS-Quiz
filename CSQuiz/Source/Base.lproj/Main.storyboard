@@ -95,7 +95,7 @@
                             <constraint firstItem="HUf-rk-c7F" firstAttribute="leading" secondItem="VAm-Rl-Vyc" secondAttribute="leading" constant="20" id="msJ-zV-fX2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Настройки" largeTitleDisplayMode="always" id="Lli-vw-JMo"/>
+                    <navigationItem key="navigationItem" title="Настройки" prompt="                        " id="Lli-vw-JMo"/>
                     <connections>
                         <outlet property="soundLabel" destination="4RN-65-pus" id="CDA-qw-NDh"/>
                         <outlet property="soundSwitch" destination="rFq-sl-dOY" id="ZNo-gV-gjp"/>
@@ -157,7 +157,7 @@
                             <constraint firstItem="NX6-9f-hmT" firstAttribute="leading" secondItem="7Na-sa-dYC" secondAttribute="leading" constant="20" id="jIg-nw-IaJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Квиз" largeTitleDisplayMode="always" id="f9b-Tv-2lR"/>
+                    <navigationItem key="navigationItem" title="Квиз" prompt="                   " id="f9b-Tv-2lR"/>
                     <connections>
                         <outlet property="complexitySegmentedControl" destination="NX6-9f-hmT" id="xlT-uA-dI4"/>
                         <outlet property="startButton" destination="ApY-0p-AAg" id="uwg-eG-n5u"/>
@@ -251,7 +251,7 @@
                             <constraint firstItem="XKH-hR-GCp" firstAttribute="top" secondItem="bNo-Kp-DZ9" secondAttribute="bottom" id="ycl-hl-QUc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="1/10" largeTitleDisplayMode="never" id="mlM-KW-f2K">
+                    <navigationItem key="navigationItem" title="1/10" prompt="                    " id="mlM-KW-f2K">
                         <barButtonItem key="rightBarButtonItem" title="Пропустить" id="xHv-YB-3t8"/>
                     </navigationItem>
                     <connections>
