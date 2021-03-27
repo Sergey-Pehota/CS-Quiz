@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
         quizViewController.title = "Квиз"
+        let image = UIImage(systemName: "face.smiling")
+        quizViewController.tabBarItem = UITabBarItem(title: "Квиз", image: image, tag: 0)
         let navigationController = UINavigationController(rootViewController: quizViewController)
         navigationController.navigationBar.prefersLargeTitles = true
 
