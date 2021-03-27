@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
         quizViewController.title = "Квиз"
         let navigationController = UINavigationController(rootViewController: quizViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
 
         return navigationController
     }
@@ -44,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
+        questionViewController.title = "1/10"
         questionViewController.model = model
         let navigationController = UINavigationController(rootViewController: questionViewController)
 
@@ -55,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsViewController = storyboard.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController
         settingsViewController.title = "Настройки"
         let navigationController = UINavigationController(rootViewController: settingsViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
 
         return navigationController
     }

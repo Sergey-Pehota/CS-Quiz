@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Настройки-->
+        <!--Settings View Controller-->
         <scene sceneID="3xi-LG-mfr">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="8be-c7-vhV" customClass="SettingsViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,6 @@
                             <constraint firstItem="HUf-rk-c7F" firstAttribute="leading" secondItem="VAm-Rl-Vyc" secondAttribute="leading" constant="20" id="msJ-zV-fX2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Настройки" prompt="                        " id="Lli-vw-JMo"/>
                     <connections>
                         <outlet property="soundLabel" destination="4RN-65-pus" id="CDA-qw-NDh"/>
                         <outlet property="soundSwitch" destination="rFq-sl-dOY" id="ZNo-gV-gjp"/>
@@ -105,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="1650.7246376811595" y="75.669642857142847"/>
         </scene>
-        <!--Квиз-->
+        <!--Quiz View Controller-->
         <scene sceneID="veK-kj-MLA">
             <objects>
                 <viewController storyboardIdentifier="QuizViewController" id="SK2-qK-MSf" customClass="QuizViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +156,6 @@
                             <constraint firstItem="NX6-9f-hmT" firstAttribute="leading" secondItem="7Na-sa-dYC" secondAttribute="leading" constant="20" id="jIg-nw-IaJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Квиз" prompt="                   " id="f9b-Tv-2lR"/>
                     <connections>
                         <outlet property="complexitySegmentedControl" destination="NX6-9f-hmT" id="xlT-uA-dI4"/>
                         <outlet property="startButton" destination="ApY-0p-AAg" id="uwg-eG-n5u"/>
@@ -167,7 +165,7 @@
             </objects>
             <point key="canvasLocation" x="-139" y="76"/>
         </scene>
-        <!--1/10-->
+        <!--Question View Controller-->
         <scene sceneID="nE4-6M-6ro">
             <objects>
                 <viewController storyboardIdentifier="QuestionViewController" hidesBottomBarWhenPushed="YES" id="9c6-cJ-msg" customClass="QuestionViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -251,9 +249,6 @@
                             <constraint firstItem="XKH-hR-GCp" firstAttribute="top" secondItem="bNo-Kp-DZ9" secondAttribute="bottom" id="ycl-hl-QUc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="1/10" prompt="                    " id="mlM-KW-f2K">
-                        <barButtonItem key="rightBarButtonItem" title="Пропустить" id="xHv-YB-3t8"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="titleLabel" destination="sQP-oc-6Hq" id="n7I-es-gfP"/>
                     </connections>
