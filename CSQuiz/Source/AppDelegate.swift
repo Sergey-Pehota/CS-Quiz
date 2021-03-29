@@ -27,12 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return tabBarController
     }
     
-    
     func makeQuizViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
         quizViewController.title = "Квиз"
-        let image = UIImage(systemName: "face.smiling")
+        let image = UIImage(systemName: "hand.raised")
         quizViewController.tabBarItem = UITabBarItem(title: "Квиз", image: image, tag: 0)
         let navigationController = UINavigationController(rootViewController: quizViewController)
         navigationController.navigationBar.prefersLargeTitles = true
@@ -58,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let settingsViewController = storyboard.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController
         settingsViewController.title = "Настройки"
+        let image = UIImage(systemName: "hand.point.right")
+        settingsViewController.tabBarItem = UITabBarItem(title: "Настройки", image: image, tag: 0)
         let navigationController = UINavigationController(rootViewController: settingsViewController)
         navigationController.navigationBar.prefersLargeTitles = true
 
