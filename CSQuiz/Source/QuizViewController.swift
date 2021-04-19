@@ -31,7 +31,26 @@ class QuizViewController: UIViewController {
         startButton.layer.cornerRadius = 12
     }
     
+    @IBAction func startButtonAction(_ sender: Any) {
+        let vc = makeQuestionViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
     @objc func handleComplexitySegmentedControlValueChanged(_ sender: UISegmentedControl) {
         print("Handle")
+    }
+    
+    func makeQuestionViewController() -> UIViewController {
+        let model = QuestionModel(
+            question: "Перечислите основные принципы ООП",
+            answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
+        questionViewController.title = "1/10"
+        questionViewController.model = model
+        let navigationController = UINavigationController(rootViewController: questionViewController)
+
+        return navigationController
     }
 }
