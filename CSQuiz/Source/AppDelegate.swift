@@ -10,6 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var quizViewController: QuizViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -29,12 +30,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func makeQuizViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController") as! QuizViewController
+        quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController")
+        quizViewController.delegate = self
         quizViewController.title = "Квиз"
         let image = UIImage(systemName: "hand.raised")
         quizViewController.tabBarItem = UITabBarItem(title: "Квиз", image: image, tag: 0)
         let navigationController = UINavigationController(rootViewController: quizViewController)
         navigationController.navigationBar.prefersLargeTitles = true
+
+        return navigationController
+    }
+    
+    func makeQuestionViewController() -> UIViewController {
+        let model = QuestionModel(
+            question: "Перечислите основные принципы ООП",
+            answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
+        questionViewController.title = "1/10"
+        questionViewController.model = model
+        let navigationController = UINavigationController(rootViewController: questionViewController)
 
         return navigationController
     }
@@ -52,3 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: QuizViewControllerDelegate {
+    func didTapStartButton() {
+        let vc = makeQuestionViewController()
+        quizViewController.present(vc, animated: true, completion: nil)
+    }
+}

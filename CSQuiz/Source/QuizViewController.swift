@@ -12,9 +12,15 @@ struct QuizModel {
     let startTitle: String
 }
 
+protocol QuizViewControllerDelegate {
+    func didTapStartButton()
+}
+
 class QuizViewController: UIViewController {
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var startButton: UIButton!
+    
+    var delegate: QuizViewControllerDelegate?
     
     let model = QuizModel(complexityTitles: ["Легко", "Сложно"], startTitle: "Начать")
     
@@ -32,25 +38,10 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func startButtonAction(_ sender: Any) {
-        let vc = makeQuestionViewController()
-        present(vc, animated: true, completion: nil)
+        delegate?.didTapStartButton()
     }
     
     @objc func handleComplexitySegmentedControlValueChanged(_ sender: UISegmentedControl) {
         print("Handle")
-    }
-    
-    func makeQuestionViewController() -> UIViewController {
-        let model = QuestionModel(
-            question: "Перечислите основные принципы ООП",
-            answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
-        questionViewController.title = "1/10"
-        questionViewController.model = model
-        let navigationController = UINavigationController(rootViewController: questionViewController)
-
-        return navigationController
     }
 }
