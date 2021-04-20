@@ -42,14 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func makeQuestionViewController() -> UIViewController {
-        let model = QuestionModel(
-            question: "Перечислите основные принципы ООП",
+        let question = Question(
+            text: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.title = "1/10"
-        questionViewController.model = model
+        questionViewController.question = question
         let navigationController = UINavigationController(rootViewController: questionViewController)
 
         return navigationController

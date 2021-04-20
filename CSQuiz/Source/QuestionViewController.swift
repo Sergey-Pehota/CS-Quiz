@@ -7,15 +7,9 @@
 
 import UIKit
 
-// Оставляем класс в качестве примера, в данном случае лучще использовать структуру
-class QuestionModel {
-    let question: String
+struct Question {
+    let text: String
     let answers: [String]
-    
-    init(question: String, answers: [String]) {
-        self.question = question
-        self.answers = answers
-    }
 }
 
 class QuestionViewController: UIViewController {
@@ -26,17 +20,17 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
     
-    var model: QuestionModel!
+    var question: Question!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = model.question
+        titleLabel.text = question.text
         
         [firstButton, secondButton, thirdButton, fourthButton]
             .enumerated()
             .forEach { index, button in
-                button?.setTitle(model.answers[index], for: .normal)
+                button?.setTitle(question.answers[index], for: .normal)
                 button?.layer.cornerRadius = 12
                 button?.layer.borderWidth = 1
                 button?.layer.borderColor = UIColor.blue.cgColor
