@@ -12,6 +12,10 @@ struct Question {
     let answers: [String]
 }
 
+protocol QuestionViewControllerDelegate {
+    func didTapButton(option: String)
+}
+
 class QuestionViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
    
@@ -19,6 +23,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
+    
+    var delegate: QuestionViewControllerDelegate?
     
     var question: Question!
     
@@ -37,4 +43,22 @@ class QuestionViewController: UIViewController {
                 button?.backgroundColor = .clear
             }
     }
+    
+    
+    @IBAction func firstButtonAction(_ sender: Any) {
+        delegate?.didTapButton(option: question.answers[0])
+    }
+    
+    @IBAction func secondButtonAction(_ sender: Any) {
+        delegate?.didTapButton(option: question.answers[1])
+    }
+    
+    @IBAction func thirdButtonAction(_ sender: Any) {
+        delegate?.didTapButton(option: question.answers[2])
+    }
+    
+    @IBAction func fourthButtonAction(_ sender: Any) {
+        delegate?.didTapButton(option: question.answers[3])
+    }
 }
+

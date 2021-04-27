@@ -209,6 +209,9 @@
                                         <state key="normal" title="Наследование">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="firstButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="vgn-KI-EcN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ben-LE-DCo">
                                         <rect key="frame" x="0.0" y="100.5" width="374" height="80"/>
@@ -217,6 +220,9 @@
                                         <state key="normal" title="Инкапсуляция">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="F6C-Ew-YSI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-Wo-ujV">
                                         <rect key="frame" x="0.0" y="200.5" width="374" height="80.5"/>
@@ -225,6 +231,9 @@
                                         <state key="normal" title="Полиморфизм">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="thirdButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="gJl-Sk-6Bm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-tg-6iO">
                                         <rect key="frame" x="0.0" y="301" width="374" height="80"/>
@@ -233,6 +242,9 @@
                                         <state key="normal" title="Всё выше перечисленное">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fourthButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="cpy-1A-tuQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -253,6 +265,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstButton" destination="Kq5-SH-yno" id="lSC-KX-4x7"/>
+                        <outlet property="fourthButton" destination="OSe-tg-6iO" id="dac-5y-e1i"/>
+                        <outlet property="secondButton" destination="ben-LE-DCo" id="aqC-HG-XIw"/>
+                        <outlet property="thirdButton" destination="Heq-Wo-ujV" id="WK5-gd-eav"/>
                         <outlet property="titleLabel" destination="sQP-oc-6Hq" id="n7I-es-gfP"/>
                     </connections>
                 </viewController>

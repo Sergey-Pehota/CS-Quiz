@@ -45,9 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let question = Question(
             text: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"])
-
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
+        questionViewController.delegate = self
         questionViewController.title = "1/10"
         questionViewController.question = question
         let navigationController = UINavigationController(rootViewController: questionViewController)
@@ -72,5 +72,11 @@ extension AppDelegate: QuizViewControllerDelegate {
     func didTapStartButton() {
         let vc = makeQuestionViewController()
         quizViewController.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension AppDelegate: QuestionViewControllerDelegate {
+    func didTapButton(option: String) {
+        print("Option: \(option)")
     }
 }
