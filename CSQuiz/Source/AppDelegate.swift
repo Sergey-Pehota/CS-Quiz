@@ -68,10 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func makeFinishViewController() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .green
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let finishViewController = storyboard.instantiateViewController(identifier: "FinishViewController") as! FinishViewController
         
-        return vc
+        return finishViewController
     }
     
     func makeSettingsViewController() -> UIViewController {
