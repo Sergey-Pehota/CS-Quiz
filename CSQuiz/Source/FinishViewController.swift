@@ -1,6 +1,5 @@
 import UIKit
 
-
 class FinishViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -8,6 +7,6 @@ class FinishViewController: UIViewController {
     }
     
     @IBAction func finishButtonAction(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
 }
