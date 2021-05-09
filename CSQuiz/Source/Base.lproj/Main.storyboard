@@ -315,6 +315,7 @@
                     <connections>
                         <outlet property="firstButton" destination="Kq5-SH-yno" id="lSC-KX-4x7"/>
                         <outlet property="fourthButton" destination="OSe-tg-6iO" id="dac-5y-e1i"/>
+                        <outlet property="progressView" destination="bNo-Kp-DZ9" id="LKM-ei-6ZY"/>
                         <outlet property="secondButton" destination="ben-LE-DCo" id="aqC-HG-XIw"/>
                         <outlet property="thirdButton" destination="Heq-Wo-ujV" id="WK5-gd-eav"/>
                         <outlet property="titleLabel" destination="sQP-oc-6Hq" id="n7I-es-gfP"/>
@@ -322,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmF-T5-hPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="76"/>
+            <point key="canvasLocation" x="750.72463768115949" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>

@@ -57,12 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return navigationController
     }
     
-    func makeQuestionViewController(question: Question) -> UIViewController {
+    func makeQuestionViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.delegate = self
-        questionViewController.title = "1/10"
-        questionViewController.question = question
+        questionViewController.title = "\(index + 1)/\(questions.count)"
+        questionViewController.progress = Float(index) / Float(questions.count)
+        questionViewController.question = questions[index]
 
         return questionViewController
     }
@@ -70,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func makeFinishViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let finishViewController = storyboard.instantiateViewController(identifier: "FinishViewController") as! FinishViewController
+        finishViewController.title = "Результаты"
         
         return finishViewController
     }
@@ -89,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: QuizViewControllerDelegate {
     func didTapStartButton() {
-        let vc = makeQuestionViewController(question: questions[index])
+        let vc = makeQuestionViewController()
         questionNavigationController = UINavigationController(rootViewController: vc)
         quizViewController.present(questionNavigationController, animated: true, completion: nil)
     }
@@ -97,13 +99,15 @@ extension AppDelegate: QuizViewControllerDelegate {
 
 extension AppDelegate: QuestionViewControllerDelegate {
     func didTapButton(option: String) {
-        if index < questions.count - 1 {
+        let notLastQuestion = index < questions.count - 1
+        if notLastQuestion {
             index += 1
-            let vc = makeQuestionViewController(question: questions[index])
-            questionNavigationController.pushViewController(vc, animated: true)
+            let vc = makeQuestionViewController()
+            questionNavigationController.setViewControllers([vc], animated: true)
         } else {
+            index = 0
             let vc = makeFinishViewController()
-            questionNavigationController.pushViewController(vc, animated: true)
+            questionNavigationController.setViewControllers([vc], animated: true)
         }
     }
 }

@@ -23,15 +23,19 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var delegate: QuestionViewControllerDelegate?
     
     var question: Question!
+    var progress: Float!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = question.text
+        
+        progressView.setProgress(progress, animated: false)
         
         [firstButton, secondButton, thirdButton, fourthButton]
             .enumerated()
