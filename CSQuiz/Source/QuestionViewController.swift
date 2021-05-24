@@ -10,10 +10,11 @@ import UIKit
 struct Question {
     let text: String
     let answers: [String]
+    let correctAnswer: String
 }
 
 protocol QuestionViewControllerDelegate {
-    func didTapButton(option: String)
+    func didTapButton(chosenOption: String)
 }
 
 class QuestionViewController: UIViewController {
@@ -50,19 +51,19 @@ class QuestionViewController: UIViewController {
     
     
     @IBAction func firstButtonAction(_ sender: Any) {
-        delegate?.didTapButton(option: question.answers[0])
+        delegate?.didTapButton(chosenOption: question.answers[0])
     }
     
     @IBAction func secondButtonAction(_ sender: Any) {
-        delegate?.didTapButton(option: question.answers[1])
+        delegate?.didTapButton(chosenOption: question.answers[1])
     }
     
     @IBAction func thirdButtonAction(_ sender: Any) {
-        delegate?.didTapButton(option: question.answers[2])
+        delegate?.didTapButton(chosenOption: question.answers[2])
     }
     
     @IBAction func fourthButtonAction(_ sender: Any) {
-        delegate?.didTapButton(option: question.answers[3])
+        delegate?.didTapButton(chosenOption: question.answers[3])
     }
 }
 

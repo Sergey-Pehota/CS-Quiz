@@ -17,15 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var questions: [Question] = [
         Question(
             text: "Перечислите основные принципы ООП",
-            answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"]),
+            answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"],
+            correctAnswer: "Все выше перечисленное"),
         
         Question(
             text: "Каким образом можно инициализировать массив?",
-            answers: ["1", "2", "3", "4"]),
+            answers: ["let array: [1, 5, 67]", "var array = [String]()", "var array = {«Дед», «Баба»}", "let array = []()"],
+            correctAnswer: "var array = [String]()"),
         
         Question(
-            text: "Каким образом можно инициализировать массив?",
-            answers: ["5", "6", "7", "8"]),
+            text: "Что из нижеприведенного является унарным оператором?",
+            answers: ["?,!", "+, -", "&&, ||", "Все выше перечисленное"],
+            correctAnswer: "?,!"),
+        
+        Question(
+            text: "Как правильно декларировать протокол?",
+            answers: ["protocol Example { func example() }", "protocol example() {}", "protocol example = [«Learn», «Study», «Practice»]", "var example = Protocol()"],
+            correctAnswer: "protocol Example { func example() }"),
     ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -98,7 +106,7 @@ extension AppDelegate: QuizViewControllerDelegate {
 }
 
 extension AppDelegate: QuestionViewControllerDelegate {
-    func didTapButton(option: String) {
+    func didTapButton(chosenOption: String) {
         let notLastQuestion = index < questions.count - 1
         if notLastQuestion {
             index += 1
@@ -109,5 +117,9 @@ extension AppDelegate: QuestionViewControllerDelegate {
             let vc = makeFinishViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
         }
+        
+//        if chosenOption == correctAnswer {
+//
+//        }
     }
 }
