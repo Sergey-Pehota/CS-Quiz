@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var quizViewController: QuizViewController!
     var questionNavigationController: UINavigationController!
     var index = 0
+    var correctAnswersCount = 0
+    var wrongAnswersCount = 0
     
     var questions: [Question] = [
         Question(
@@ -107,6 +109,19 @@ extension AppDelegate: QuizViewControllerDelegate {
 
 extension AppDelegate: QuestionViewControllerDelegate {
     func didTapButton(chosenOption: String) {
+        answerQuestion(chosenOption)
+        nextScreen()
+    }
+    
+    private func answerQuestion(_ chosenOption: String) {
+        if questions[index].correctAnswer == chosenOption {
+            correctAnswersCount += 1
+        } else {
+            wrongAnswersCount += 1
+        }
+    }
+
+    private func nextScreen() {
         let notLastQuestion = index < questions.count - 1
         if notLastQuestion {
             index += 1
@@ -117,9 +132,5 @@ extension AppDelegate: QuestionViewControllerDelegate {
             let vc = makeFinishViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
         }
-        
-//        if chosenOption == correctAnswer {
-//
-//        }
     }
 }
