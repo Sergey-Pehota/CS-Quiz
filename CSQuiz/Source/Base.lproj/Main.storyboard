@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="-139" y="76"/>
         </scene>
-        <!--Finish View Controller-->
+        <!--Quiz Result View Controller-->
         <scene sceneID="VFX-w0-YUN">
             <objects>
-                <viewController storyboardIdentifier="FinishViewController" id="1h8-Z8-hGL" customClass="FinishViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizResultViewController" id="1h8-Z8-hGL" customClass="QuizResultViewController" customModule="CSQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8DE-B3-WFL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

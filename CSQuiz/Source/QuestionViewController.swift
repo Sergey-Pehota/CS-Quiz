@@ -46,6 +46,7 @@ class QuestionViewController: UIViewController {
                 button?.layer.borderWidth = 1
                 button?.layer.borderColor = UIColor.blue.cgColor
                 button?.backgroundColor = .clear
+                button?.titleLabel?.adjustsFontSizeToFitWidth = true
             }
     }
     

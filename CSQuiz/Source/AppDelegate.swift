@@ -78,12 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return questionViewController
     }
     
-    func makeFinishViewController() -> UIViewController {
+    func makeQuizResultViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let finishViewController = storyboard.instantiateViewController(identifier: "FinishViewController") as! FinishViewController
-        finishViewController.title = "Результаты"
+        let vc = storyboard.instantiateViewController(identifier: "QuizResultViewController") as! QuizResultViewController
+        vc.title = "Результаты"
+        vc.quizResult = QuizResult(
+            questionsCount: questions.count,
+            correctAnswersCount: correctAnswersCount,
+            wrongAnswersCount: wrongAnswersCount)
         
-        return finishViewController
+        return vc
     }
     
     func makeSettingsViewController() -> UIViewController {
@@ -129,7 +133,7 @@ extension AppDelegate: QuestionViewControllerDelegate {
             questionNavigationController.setViewControllers([vc], animated: true)
         } else {
             index = 0
-            let vc = makeFinishViewController()
+            let vc = makeQuizResultViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
         }
     }
