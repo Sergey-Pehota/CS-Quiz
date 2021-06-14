@@ -13,6 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var quizViewController: QuizViewController!
     var questionNavigationController: UINavigationController!
     var index = 0
+    var questionsCount: Int {
+        questions.count
+    }
     var correctAnswersCount = 0
     var wrongAnswersCount = 0
     
@@ -71,8 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.delegate = self
-        questionViewController.title = "\(index + 1)/\(questions.count)"
-        questionViewController.progress = Float(index) / Float(questions.count)
+        questionViewController.title = "\(index + 1)/\(questionsCount)"
+        questionViewController.progress = Float(index) / Float(questionsCount)
         questionViewController.question = questions[index]
 
         return questionViewController
@@ -80,14 +83,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func makeQuizResultViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "QuizResultViewController") as! QuizResultViewController
-        vc.title = "Результаты"
-        vc.quizResult = QuizResult(
-            questionsCount: questions.count,
+        let quizResultViewController = storyboard.instantiateViewController(identifier: "QuizResultViewController") as! QuizResultViewController
+        quizResultViewController.delegate = self
+        quizResultViewController.title = "Результаты"
+        quizResultViewController.quizResult = QuizResult(
+            questionsCount: questionsCount,
             correctAnswersCount: correctAnswersCount,
             wrongAnswersCount: wrongAnswersCount)
         
-        return vc
+        return quizResultViewController
     }
     
     func makeSettingsViewController() -> UIViewController {
@@ -126,7 +130,7 @@ extension AppDelegate: QuestionViewControllerDelegate {
     }
 
     private func nextScreen() {
-        let notLastQuestion = index < questions.count - 1
+        let notLastQuestion = index < questionsCount - 1
         if notLastQuestion {
             index += 1
             let vc = makeQuestionViewController()
@@ -136,5 +140,14 @@ extension AppDelegate: QuestionViewControllerDelegate {
             let vc = makeQuizResultViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
         }
+    }
+}
+
+extension AppDelegate: QuizResultViewControllerDelegate {
+    func didTapFinishButton() {
+        questionNavigationController.dismiss(animated: true, completion: nil)
+        
+        correctAnswersCount = 0
+        wrongAnswersCount = 0
     }
 }
