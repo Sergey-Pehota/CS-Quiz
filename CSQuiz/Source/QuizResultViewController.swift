@@ -25,7 +25,6 @@ class QuizResultViewController: UIViewController {
         questionsAtAllLabel.text = "Всего вопросов: \(quizResult.questionsCount)"
         correctAnswersLabel.text = "Количество правильных ответов: \(quizResult.correctAnswersCount)"
         wrongAnswersLabel.text = "Количество неправильных ответов: \(quizResult.wrongAnswersCount)"
-        
     }
     
     @IBAction func finishButtonAction(_ sender: Any) {
