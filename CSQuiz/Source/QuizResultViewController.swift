@@ -12,7 +12,9 @@ protocol QuizResultViewControllerDelegate {
 
 class QuizResultViewController: UIViewController {
  
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var questionsAtAllLabel: UILabel!
+    @IBOutlet weak var correctAnswersLabel: UILabel!
+    @IBOutlet weak var wrongAnswersLabel: UILabel!
     
     var delegate: QuizResultViewControllerDelegate?
     var quizResult: QuizResult!
@@ -20,13 +22,9 @@ class QuizResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                
-        resultLabel.text = """
-        Всего вопросов: \(quizResult.questionsCount)
-        Количество правильных ответов: \(quizResult.correctAnswersCount)
-        Количество неправильных ответов: \(quizResult.wrongAnswersCount)
-        """
-        
-        resultLabel.layer.cornerRadius = 12
+        questionsAtAllLabel.text = "Всего вопросов: \(quizResult.questionsCount)"
+        correctAnswersLabel.text = "Количество правильных ответов: \(quizResult.correctAnswersCount)"
+        wrongAnswersLabel.text = "Количество неправильных ответов: \(quizResult.wrongAnswersCount)"
         
     }
     
