@@ -23,22 +23,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Question(
             text: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"],
-            correctAnswer: "Все выше перечисленное"),
+            correctAnswer: "Все выше перечисленное",
+            complexity: .easy),
         
         Question(
             text: "Каким образом можно инициализировать массив?",
             answers: ["let array: [1, 5, 67]", "var array = [String]()", "var array = {«Дед», «Баба»}", "let array = []()"],
-            correctAnswer: "var array = [String]()"),
+            correctAnswer: "var array = [String]()",
+            complexity: .hard),
         
         Question(
             text: "Что из нижеприведенного является унарным оператором?",
             answers: ["?,!", "+, -", "&&, ||", "Все выше перечисленное"],
-            correctAnswer: "?,!"),
+            correctAnswer: "?,!",
+            complexity: .hard),
         
         Question(
             text: "Как правильно декларировать протокол?",
             answers: ["protocol Example { func example() }", "protocol example() {}", "protocol example = [«Learn», «Study», «Practice»]", "var example = Protocol()"],
-            correctAnswer: "protocol Example { func example() }"),
+            correctAnswer: "protocol Example { func example() }",
+            complexity: .easy),
     ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

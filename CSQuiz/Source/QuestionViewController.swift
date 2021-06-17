@@ -7,10 +7,15 @@
 
 import UIKit
 
+enum Complexity {
+    case easy, hard
+}
+
 struct Question {
     let text: String
     let answers: [String]
     let correctAnswer: String
+    let complexity: Complexity
 }
 
 protocol QuestionViewControllerDelegate {
