@@ -22,17 +22,17 @@ class QuizViewController: UIViewController {
     
     var delegate: QuizViewControllerDelegate?
     
-    let model = QuizModel(complexityTitles: ["Легко", "Сложно"], startTitle: "Начать")
+    var quiz: QuizModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        complexitySegmentedControl.setTitle(model.complexityTitles[0], forSegmentAt: 0)
-        complexitySegmentedControl.setTitle(model.complexityTitles[1], forSegmentAt: 1)
+        complexitySegmentedControl.setTitle(quiz.complexityTitles[0], forSegmentAt: 0)
+        complexitySegmentedControl.setTitle(quiz.complexityTitles[1], forSegmentAt: 1)
         
         complexitySegmentedControl.addTarget(self, action: #selector(handleComplexitySegmentedControlValueChanged(_:)), for: .valueChanged)
         
-        startButton.setTitle(model.startTitle, for: .normal)
+        startButton.setTitle(quiz.startTitle, for: .normal)
         
         startButton.layer.cornerRadius = 12
     }
