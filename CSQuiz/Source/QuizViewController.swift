@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct QuizModel {
+struct Quiz {
     let complexityTitles: [String]
     let startTitle: String
 }
@@ -22,7 +22,7 @@ class QuizViewController: UIViewController {
     
     var delegate: QuizViewControllerDelegate?
     
-    var quiz: QuizModel!
+    var quiz: Quiz!
     
     override func viewDidLoad() {
         super.viewDidLoad()

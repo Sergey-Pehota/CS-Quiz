@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController")
         quizViewController.delegate = self
         quizViewController.title = "Квиз"
-        quizViewController.quiz = QuizModel(complexityTitles: ["Легко", "Сложно"], startTitle: "Начать")
+        quizViewController.quiz = Quiz(complexityTitles: ["Легко", "Сложно"], startTitle: "Начать")
         let image = UIImage(systemName: "hand.raised")
         quizViewController.tabBarItem = UITabBarItem(title: "Квиз", image: image, tag: 0)
         let navigationController = UINavigationController(rootViewController: quizViewController)
