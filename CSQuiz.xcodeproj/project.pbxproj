@@ -14,6 +14,7 @@
 		A50F35A425FA85E700208519 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F35A325FA85E700208519 /* SettingsViewController.swift */; };
 		A514BD5F25FE1D1B0093A1F2 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A514BD5E25FE1D1B0093A1F2 /* QuizViewController.swift */; };
 		A5466A652641DCF500CEF20B /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5466A642641DCF500CEF20B /* QuizResultViewController.swift */; };
+		A552B61A267BE19C00D930B8 /* Complexity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B619267BE19C00D930B8 /* Complexity.swift */; };
 		A5F5AB3825F940210041B7BA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5AB3725F940200041B7BA /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		A50F35A325FA85E700208519 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A514BD5E25FE1D1B0093A1F2 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		A5466A642641DCF500CEF20B /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
+		A552B619267BE19C00D930B8 /* Complexity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complexity.swift; sourceTree = "<group>"; };
 		A5F5AB3725F940200041B7BA /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				A5466A642641DCF500CEF20B /* QuizResultViewController.swift */,
 				A5F5AB3725F940200041B7BA /* QuestionViewController.swift */,
 				A50F35A325FA85E700208519 /* SettingsViewController.swift */,
+				A552B619267BE19C00D930B8 /* Complexity.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5466A652641DCF500CEF20B /* QuizResultViewController.swift in Sources */,
+				A552B61A267BE19C00D930B8 /* Complexity.swift in Sources */,
 				18023AA625F3ABF00080FEDC /* AppDelegate.swift in Sources */,
 				A5F5AB3825F940210041B7BA /* QuestionViewController.swift in Sources */,
 				A514BD5F25FE1D1B0093A1F2 /* QuizViewController.swift in Sources */,

@@ -14,17 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var questionNavigationController: UINavigationController!
     var index = 0
     var questionsCount: Int {
-        questions.count
+        questions
+            .filter { $0.complexity == complexity }
+            .count
     }
     var correctAnswersCount = 0
     var wrongAnswersCount = 0
     
+    var complexity = Complexity.easy
+
     var questions: [Question] = [
         Question(
             text: "Перечислите основные принципы ООП",
             answers: ["Полиморфизм", "Инкапсуляция", "Наследование", "Все выше перечисленное"],
             correctAnswer: "Все выше перечисленное",
-            complexity: .easy),
+            complexity: .hard),
         
         Question(
             text: "Каким образом можно инициализировать массив?",
@@ -36,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             text: "Что из нижеприведенного является унарным оператором?",
             answers: ["?,!", "+, -", "&&, ||", "Все выше перечисленное"],
             correctAnswer: "?,!",
-            complexity: .hard),
+            complexity: .medium),
         
         Question(
             text: "Как правильно декларировать протокол?",
@@ -66,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController")
         quizViewController.delegate = self
         quizViewController.title = "Квиз"
-        quizViewController.quiz = Quiz(complexityTitles: ["Легко", "Сложно"], startTitle: "Начать")
+        quizViewController.quiz = Quiz(complexityLevels: Complexity.allCases, startTitle: "Начать")
         let image = UIImage(systemName: "hand.raised")
         quizViewController.tabBarItem = UITabBarItem(title: "Квиз", image: image, tag: 0)
         let navigationController = UINavigationController(rootViewController: quizViewController)
@@ -81,8 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         questionViewController.delegate = self
         questionViewController.title = "\(index + 1)/\(questionsCount)"
         questionViewController.progress = Float(index) / Float(questionsCount)
-        questionViewController.question = questions[index]
-
+        let filteredQuestions = questions.filter { $0.complexity == complexity }
+        questionViewController.question = filteredQuestions[index]
+        
         return questionViewController
     }
     
@@ -113,6 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: QuizViewControllerDelegate {
+    func didTapSegmentedControl(at index: Int) {
+        complexity = Complexity(rawValue: index)!
+    }
+    
     func didTapStartButton() {
         let vc = makeQuestionViewController()
         questionNavigationController = UINavigationController(rootViewController: vc)

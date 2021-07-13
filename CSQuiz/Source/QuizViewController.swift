@@ -8,12 +8,13 @@
 import UIKit
 
 struct Quiz {
-    let complexityTitles: [String]
+    var complexityLevels: [Complexity]
     let startTitle: String
 }
 
 protocol QuizViewControllerDelegate {
     func didTapStartButton()
+    func didTapSegmentedControl(at index: Int)
 }
 
 class QuizViewController: UIViewController {
@@ -27,8 +28,9 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        complexitySegmentedControl.setTitle(quiz.complexityTitles[0], forSegmentAt: 0)
-        complexitySegmentedControl.setTitle(quiz.complexityTitles[1], forSegmentAt: 1)
+        complexitySegmentedControl.setTitle(quiz.complexityLevels[0].title, forSegmentAt: 0)
+        complexitySegmentedControl.setTitle(quiz.complexityLevels[1].title, forSegmentAt: 1)
+        complexitySegmentedControl.setTitle(quiz.complexityLevels[2].title, forSegmentAt: 2)
         
         complexitySegmentedControl.addTarget(self, action: #selector(handleComplexitySegmentedControlValueChanged(_:)), for: .valueChanged)
         
@@ -42,6 +44,7 @@ class QuizViewController: UIViewController {
     }
     
     @objc func handleComplexitySegmentedControlValueChanged(_ sender: UISegmentedControl) {
-        print("Handle")
+        let index = sender.selectedSegmentIndex
+        delegate?.didTapSegmentedControl(at: index)
     }
 }
