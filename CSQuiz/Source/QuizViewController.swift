@@ -31,6 +31,7 @@ class QuizViewController: UIViewController {
         complexitySegmentedControl.setTitle(quiz.complexityLevels[0].title, forSegmentAt: 0)
         complexitySegmentedControl.setTitle(quiz.complexityLevels[1].title, forSegmentAt: 1)
         complexitySegmentedControl.setTitle(quiz.complexityLevels[2].title, forSegmentAt: 2)
+
         
         complexitySegmentedControl.addTarget(self, action: #selector(handleComplexitySegmentedControlValueChanged(_:)), for: .valueChanged)
         

@@ -334,52 +334,6 @@
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oEL-hq-i2u">
                                 <rect key="frame" x="20" y="476" width="388" height="396"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq5-SH-yno">
-                                        <rect key="frame" x="0.0" y="0.0" width="388" height="84"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Наследование">
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="firstButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="vgn-KI-EcN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ben-LE-DCo">
-                                        <rect key="frame" x="0.0" y="104" width="388" height="84"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Инкапсуляция">
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="secondButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="F6C-Ew-YSI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-Wo-ujV">
-                                        <rect key="frame" x="0.0" y="208" width="388" height="84"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Полиморфизм">
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="thirdButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="gJl-Sk-6Bm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-tg-6iO">
-                                        <rect key="frame" x="0.0" y="312" width="388" height="84"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Всё выше перечисленное">
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fourthButtonAction:" destination="9c6-cJ-msg" eventType="touchUpInside" id="cpy-1A-tuQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Kj-Mq-jsD"/>
@@ -398,11 +352,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstButton" destination="Kq5-SH-yno" id="lSC-KX-4x7"/>
-                        <outlet property="fourthButton" destination="OSe-tg-6iO" id="dac-5y-e1i"/>
                         <outlet property="progressView" destination="bNo-Kp-DZ9" id="LKM-ei-6ZY"/>
-                        <outlet property="secondButton" destination="ben-LE-DCo" id="aqC-HG-XIw"/>
-                        <outlet property="thirdButton" destination="Heq-Wo-ujV" id="WK5-gd-eav"/>
                         <outlet property="titleLabel" destination="sQP-oc-6Hq" id="n7I-es-gfP"/>
                     </connections>
                 </viewController>
