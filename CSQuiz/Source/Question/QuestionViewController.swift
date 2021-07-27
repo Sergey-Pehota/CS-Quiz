@@ -4,7 +4,7 @@ protocol QuestionViewControllerDelegate {
     func didTapButton(chosenOption: String)
 }
 
-class QuestionViewController: UIViewController {
+final class QuestionViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var answersStackView: UIStackView!

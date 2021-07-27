@@ -4,8 +4,7 @@ protocol QuizResultViewControllerDelegate {
     func didTapFinishButton()
 }
 
-class QuizResultViewController: UIViewController {
- 
+final class QuizResultViewController: UIViewController {
     @IBOutlet weak var questionsAtAllLabel: UILabel!
     @IBOutlet weak var correctAnswersLabel: UILabel!
     @IBOutlet weak var wrongAnswersLabel: UILabel!
