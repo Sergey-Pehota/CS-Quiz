@@ -1,29 +1,35 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder {
     var window: UIWindow?
-    var quizViewController: QuizViewController!
-    var questionNavigationController: UINavigationController!
-    var index = 0
-    var questionsCount: Int {
-        questions
-            .filter { $0.complexity == complexity }
-            .count
+
+    private var quizViewController: QuizViewController!
+    private var questionNavigationController: UINavigationController!
+
+    private var index = 0
+    private var correctAnswersCount = 0
+    private var wrongAnswersCount = 0
+    private var complexity = Complexity.easy
+    private var questions = Question.all
+
+    private var filteredQuestions: [Question] {
+        questions.filter { $0.complexity == complexity }
     }
-    var correctAnswersCount = 0
-    var wrongAnswersCount = 0
-    
-    var complexity = Complexity.easy
+    private var filteredQuestionsCount: Int {
+        filteredQuestions.count
+    }
+}
 
-    var questions = Question.all
+// MARK: - UIApplicationDelegate
 
+extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = makeTabBarController()
-        
+
         return true
     }
 }
@@ -56,9 +62,9 @@ extension AppDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.delegate = self
-        questionViewController.title = "\(index + 1)/\(questionsCount)"
-        questionViewController.progress = Float(index) / Float(questionsCount)
-        let filteredQuestions = questions.filter { $0.complexity == complexity }
+        questionViewController.title = "\(index + 1)/\(filteredQuestionsCount)"
+        questionViewController.progress = Float(index) / Float(filteredQuestionsCount)
+        let filteredQuestions = filteredQuestions
         questionViewController.question = filteredQuestions[index]
 
         return questionViewController
@@ -70,7 +76,7 @@ extension AppDelegate {
         quizResultViewController.delegate = self
         quizResultViewController.title = "Результаты"
         quizResultViewController.quizResult = QuizResult(
-            questionsCount: questionsCount,
+            questionsCount: filteredQuestionsCount,
             correctAnswersCount: correctAnswersCount,
             wrongAnswersCount: wrongAnswersCount)
 
@@ -113,7 +119,7 @@ extension AppDelegate: QuestionViewControllerDelegate {
     }
     
     private func answerQuestion(_ chosenOption: String) {
-        let filteredQuestions = questions.filter { $0.complexity == complexity }
+        let filteredQuestions = filteredQuestions
         if filteredQuestions[index].correctAnswer == chosenOption {
             correctAnswersCount += 1
         } else {
@@ -122,7 +128,7 @@ extension AppDelegate: QuestionViewControllerDelegate {
     }
 
     private func nextScreen() {
-        let notLastQuestion = index < questionsCount - 1
+        let notLastQuestion = index < filteredQuestionsCount - 1
         if notLastQuestion {
             index += 1
             let vc = makeQuestionViewController()
