@@ -7,31 +7,45 @@
 
 import UIKit
 
-struct QuizModel {
-    let complexityTitles: [String]
+struct Quiz {
+    var complexityLevels: [Complexity]
     let startTitle: String
+}
+
+protocol QuizViewControllerDelegate {
+    func didTapStartButton()
+    func didTapSegmentedControl(at index: Int)
 }
 
 class QuizViewController: UIViewController {
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var startButton: UIButton!
     
-    let model = QuizModel(complexityTitles: ["Легко", "Сложно"], startTitle: "Начать")
+    var delegate: QuizViewControllerDelegate?
+    
+    var quiz: Quiz!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        complexitySegmentedControl.setTitle(model.complexityTitles[0], forSegmentAt: 0)
-        complexitySegmentedControl.setTitle(model.complexityTitles[1], forSegmentAt: 1)
+        complexitySegmentedControl.setTitle(quiz.complexityLevels[0].title, forSegmentAt: 0)
+        complexitySegmentedControl.setTitle(quiz.complexityLevels[1].title, forSegmentAt: 1)
+        complexitySegmentedControl.setTitle(quiz.complexityLevels[2].title, forSegmentAt: 2)
+
         
         complexitySegmentedControl.addTarget(self, action: #selector(handleComplexitySegmentedControlValueChanged(_:)), for: .valueChanged)
         
-        startButton.setTitle(model.startTitle, for: .normal)
+        startButton.setTitle(quiz.startTitle, for: .normal)
         
         startButton.layer.cornerRadius = 12
     }
     
+    @IBAction func startButtonAction(_ sender: Any) {
+        delegate?.didTapStartButton()
+    }
+    
     @objc func handleComplexitySegmentedControlValueChanged(_ sender: UISegmentedControl) {
-        print("Handle")
+        let index = sender.selectedSegmentIndex
+        delegate?.didTapSegmentedControl(at: index)
     }
 }
