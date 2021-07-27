@@ -53,11 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             correctAnswer: "get, set",
             complexity: .hard),
         
-//        Question(
-//            text: "Используется ли в протоколах, структурах и перечислениях инициализатор?",
-//            answers: ["да", "нет"],
-//            correctAnswer: "да",
-//            complexity: .easy),
+        Question(
+            text: "Используется ли в протоколах, структурах и перечислениях инициализатор?",
+            answers: ["да", "нет"],
+            correctAnswer: "да",
+            complexity: .easy),
         
         Question(
             text: "Какие из методов составляют  «жизненный цикл» приложения?",
