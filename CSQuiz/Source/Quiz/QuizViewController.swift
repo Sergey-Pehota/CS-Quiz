@@ -1,10 +1,5 @@
 import UIKit
 
-struct Quiz {
-    var complexityLevels: [Complexity]
-    let startTitle: String
-}
-
 protocol QuizViewControllerDelegate {
     func didTapStartButton()
     func didTapSegmentedControl(at index: Int)

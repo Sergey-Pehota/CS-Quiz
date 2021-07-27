@@ -1,11 +1,5 @@
 import UIKit
 
-struct QuizResult {
-    let questionsCount: Int
-    let correctAnswersCount: Int
-    let wrongAnswersCount: Int
-}
-
 protocol QuizResultViewControllerDelegate {
     func didTapFinishButton()
 }
