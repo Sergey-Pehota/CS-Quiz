@@ -93,14 +93,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
+}
+
+// MARK: - Factories
+
+extension AppDelegate {
     func makeTabBarController() -> UIViewController {
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([makeQuizViewController(), makeSettingsViewController()], animated: false)
-        
+
         return tabBarController
     }
-    
+
     func makeQuizViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         quizViewController = storyboard.instantiateViewController(identifier: "QuizViewController")
@@ -114,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return navigationController
     }
-    
+
     func makeQuestionViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
@@ -123,10 +127,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         questionViewController.progress = Float(index) / Float(questionsCount)
         let filteredQuestions = questions.filter { $0.complexity == complexity }
         questionViewController.question = filteredQuestions[index]
-        
+
         return questionViewController
     }
-    
+
     func makeQuizResultViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let quizResultViewController = storyboard.instantiateViewController(identifier: "QuizResultViewController") as! QuizResultViewController
@@ -136,10 +140,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             questionsCount: questionsCount,
             correctAnswersCount: correctAnswersCount,
             wrongAnswersCount: wrongAnswersCount)
-        
+
         return quizResultViewController
     }
-    
+
     func makeSettingsViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let settingsViewController = storyboard.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController
@@ -153,6 +157,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: - QuizViewControllerDelegate
+
 extension AppDelegate: QuizViewControllerDelegate {
     func didTapSegmentedControl(at index: Int) {
         complexity = Complexity(rawValue: index)!
@@ -164,6 +170,8 @@ extension AppDelegate: QuizViewControllerDelegate {
         quizViewController.present(questionNavigationController, animated: true, completion: nil)
     }
 }
+
+// MARK: - QuestionViewControllerDelegate
 
 extension AppDelegate: QuestionViewControllerDelegate {
     func didTapButton(chosenOption: String) {
@@ -193,6 +201,8 @@ extension AppDelegate: QuestionViewControllerDelegate {
         }
     }
 }
+
+// MARK: - QuizResultViewControllerDelegate
 
 extension AppDelegate: QuizResultViewControllerDelegate {
     func didTapFinishButton() {
