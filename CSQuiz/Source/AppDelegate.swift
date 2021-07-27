@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CSQuiz
-//
-//  Created by Nikita on 6.03.21.
-//
-
 import UIKit
 
 @main

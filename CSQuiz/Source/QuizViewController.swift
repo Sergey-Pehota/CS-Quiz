@@ -1,10 +1,3 @@
-//
-//  QuizViewController.swift
-//  CSQuiz
-//
-//  Created by Sergey on 14.03.21.
-//
-
 import UIKit
 
 struct Quiz {

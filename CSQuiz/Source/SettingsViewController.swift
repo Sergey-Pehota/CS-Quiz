@@ -1,10 +1,3 @@
-//
-//  SettingsViewController.swift
-//  CSQuiz
-//
-//  Created by Sergey on 11.03.21.
-//
-
 import UIKit
 
 struct SettingsModel {

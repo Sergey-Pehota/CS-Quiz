@@ -1,10 +1,3 @@
-//
-//  QuestionsViewController.swift
-//  CSQuiz
-//
-//  Created by Sergey on 10.03.21.
-//
-
 import UIKit
 
 struct Question {
