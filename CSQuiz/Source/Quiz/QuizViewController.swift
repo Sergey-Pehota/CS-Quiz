@@ -15,11 +15,14 @@ final class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        complexitySegmentedControl.setTitle(quiz.complexityLevels[0].title, forSegmentAt: 0)
-        complexitySegmentedControl.setTitle(quiz.complexityLevels[1].title, forSegmentAt: 1)
-        complexitySegmentedControl.setTitle(quiz.complexityLevels[2].title, forSegmentAt: 2)
-        
+
+        complexitySegmentedControl.removeAllSegments()
+        quiz.complexityLevels.enumerated().forEach { index, level in
+            complexitySegmentedControl.insertSegment(withTitle: level.title, at: index, animated: false)
+        }
+
+        complexitySegmentedControl.selectedSegmentIndex = 0
+
         complexitySegmentedControl.addTarget(self, action: #selector(handleComplexitySegmentedControlValueChanged(_:)), for: .valueChanged)
         
         startButton.setTitle(quiz.startTitle, for: .normal)

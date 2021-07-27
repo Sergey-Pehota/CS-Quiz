@@ -167,7 +167,6 @@
                                 <segments>
                                     <segment title="Легко"/>
                                     <segment title="Средне"/>
-                                    <segment title="Сложно"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
