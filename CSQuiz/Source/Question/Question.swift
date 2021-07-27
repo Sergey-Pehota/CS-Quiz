@@ -35,7 +35,7 @@ extension Question {
                 complexity: .easy),
 
             Question(
-                text: "Каким образом правильно cоздаать переменную с опциональным  типом данных?",
+                text: "Каким образом правильно cоздать переменную с опциональным  типом данных?",
                 answers: ["var variable = 12?", "var variable: String? = \"Variable\"", "var variable: Optional = 12.5!", "var variable = Optional <12.5>"],
                 correctAnswer: "var variable: String? = \"Variable\"",
                 complexity: .medium),
