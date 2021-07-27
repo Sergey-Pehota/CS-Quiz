@@ -37,7 +37,7 @@ class QuestionViewController: UIViewController {
         progressView.setProgress(progress, animated: false)
         
         var questionButton = UIButton()
-//        questionButton.setTitle(question.answers[index], for: .normal)
+//        questionButton.setTitle(question.answers[index], for: .normal)
         questionButton.titleLabel?.font = .systemFont(ofSize: 24)
         questionButton.titleLabel?.textColor = .systemBlue
         questionButton.layer.cornerRadius = 12
