@@ -7,44 +7,40 @@
 
 import UIKit
 
-struct Question {
-    let text: String
+// Оставляем класс в качестве примера, в данном случае лучще использовать структуру
+class QuestionModel {
+    let question: String
     let answers: [String]
-    let correctAnswer: String
-    let complexity: Complexity
-}
-
-protocol QuestionViewControllerDelegate {
-    func didTapButton(chosenOption: String)
+    
+    init(question: String, answers: [String]) {
+        self.question = question
+        self.answers = answers
+    }
 }
 
 class QuestionViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
    
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
     
-    @IBOutlet weak var progressView: UIProgressView!
-    
-    var delegate: QuestionViewControllerDelegate?
-    
-    var question: Question!
-    var progress: Float!
+    var model: QuestionModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = question.text
+        titleLabel.text = model.question
         
-        progressView.setProgress(progress, animated: false)
-        
-        var questionButton = UIButton()
-//        questionButton.setTitle(question.answers[index], for: .normal)
-        questionButton.titleLabel?.font = .systemFont(ofSize: 24)
-        questionButton.titleLabel?.textColor = .systemBlue
-        questionButton.layer.cornerRadius = 12
-        questionButton.layer.borderWidth = 1
-        questionButton.layer.borderColor = UIColor.blue.cgColor
-        questionButton.backgroundColor = .systemGray5
-        questionButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        [firstButton, secondButton, thirdButton, fourthButton]
+            .enumerated()
+            .forEach { index, button in
+                button?.setTitle(model.answers[index], for: .normal)
+                button?.layer.cornerRadius = 12
+                button?.layer.borderWidth = 1
+                button?.layer.borderColor = UIColor.blue.cgColor
+                button?.backgroundColor = .clear
+            }
     }
 }
-
