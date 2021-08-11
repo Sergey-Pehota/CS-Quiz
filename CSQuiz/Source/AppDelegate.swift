@@ -32,6 +32,14 @@ extension AppDelegate: UIApplicationDelegate {
 
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("applicationWillTerminate")
+        questionNavigationController.dismiss(animated: true, completion: nil)
+        
+        correctAnswersCount = 0
+        wrongAnswersCount = 0
+    }
 }
 
 // MARK: - Factories
@@ -64,8 +72,8 @@ extension AppDelegate {
         questionViewController.delegate = self
         questionViewController.title = "\(index + 1)/\(filteredQuestionsCount)"
         questionViewController.progress = Float(index) / Float(filteredQuestionsCount)
-        let filteredQuestions = filteredQuestions
-        questionViewController.question = filteredQuestions[index]
+        let fq = filteredQuestions
+        questionViewController.question = fq[index]
 
         return questionViewController
     }
@@ -119,8 +127,8 @@ extension AppDelegate: QuestionViewControllerDelegate {
     }
     
     private func answerQuestion(_ chosenOption: String) {
-        let filteredQuestions = filteredQuestions
-        if filteredQuestions[index].correctAnswer == chosenOption {
+        let fq = filteredQuestions
+        if fq[index].correctAnswer == chosenOption {
             correctAnswersCount += 1
         } else {
             wrongAnswersCount += 1
