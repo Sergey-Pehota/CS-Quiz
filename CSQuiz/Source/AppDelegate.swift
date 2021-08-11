@@ -13,6 +13,12 @@ class QuizEngine {
     var filteredQuestionsCount: Int {
         filteredQuestions.count
     }
+    
+    func finish() {
+        index = 0
+        correctAnswersCount = 0
+        wrongAnswersCount = 0
+    }
 }
 
 @main
@@ -120,6 +126,11 @@ extension AppDelegate: QuestionViewControllerDelegate {
     func didTapButton(chosenOption: String) {
         answerQuestion(chosenOption)
         nextScreen()
+    }
+    
+    func didTapClose() {
+        questionNavigationController.dismiss(animated: true, completion: nil)
+        engine.finish()
     }
     
     private func answerQuestion(_ chosenOption: String) {

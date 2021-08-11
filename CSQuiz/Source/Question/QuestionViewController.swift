@@ -2,6 +2,7 @@ import UIKit
 
 protocol QuestionViewControllerDelegate {
     func didTapButton(chosenOption: String)
+    func didTapClose()
 }
 
 final class QuestionViewController: UIViewController {
@@ -16,6 +17,8 @@ final class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeTapped))
         
         progressView.setProgress(progress, animated: false)
 
@@ -43,5 +46,9 @@ final class QuestionViewController: UIViewController {
         let chosenIndex = sender.tag
         let chosenOption = question.answers[chosenIndex]
         delegate?.didTapButton(chosenOption: chosenOption)
+    }
+    
+    @objc private func closeTapped() {
+        delegate?.didTapClose()
     }
 }
