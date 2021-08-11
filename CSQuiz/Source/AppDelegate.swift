@@ -109,6 +109,7 @@ extension AppDelegate: QuizViewControllerDelegate {
     func didTapStartButton() {
         let vc = makeQuestionViewController()
         questionNavigationController = UINavigationController(rootViewController: vc)
+        questionNavigationController.modalPresentationStyle = .fullScreen
         quizViewController.present(questionNavigationController, animated: true, completion: nil)
     }
 }
