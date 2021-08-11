@@ -26,6 +26,7 @@ final class QuestionViewController: UIViewController {
             answerButton.setTitle(answer, for: .normal)
             answerButton.setTitleColor(.systemBlue, for: .normal)
             answerButton.titleLabel?.font = .systemFont(ofSize: 24)
+            answerButton.titleLabel?.numberOfLines = 2
             answerButton.layer.cornerRadius = 12
             answerButton.layer.borderWidth = 1
             answerButton.layer.borderColor = UIColor.blue.cgColor
