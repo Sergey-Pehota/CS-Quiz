@@ -1,24 +1,27 @@
 import UIKit
 
+class QuizEngine {
+    var index = 0
+    var correctAnswersCount = 0
+    var wrongAnswersCount = 0
+    var complexity = Complexity.easy
+    var questions = Question.all
+    
+    var filteredQuestions: [Question] {
+        questions.filter { $0.complexity == complexity }
+    }
+    var filteredQuestionsCount: Int {
+        filteredQuestions.count
+    }
+}
+
 @main
 class AppDelegate: UIResponder {
     var window: UIWindow?
+    var engine = QuizEngine()
 
     private var quizViewController: QuizViewController!
     private var questionNavigationController: UINavigationController!
-
-    private var index = 0
-    private var correctAnswersCount = 0
-    private var wrongAnswersCount = 0
-    private var complexity = Complexity.easy
-    private var questions = Question.all
-
-    private var filteredQuestions: [Question] {
-        questions.filter { $0.complexity == complexity }
-    }
-    private var filteredQuestionsCount: Int {
-        filteredQuestions.count
-    }
 }
 
 // MARK: - UIApplicationDelegate
@@ -31,14 +34,6 @@ extension AppDelegate: UIApplicationDelegate {
         window?.rootViewController = makeTabBarController()
 
         return true
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        print("applicationWillTerminate")
-        questionNavigationController.dismiss(animated: true, completion: nil)
-        
-        correctAnswersCount = 0
-        wrongAnswersCount = 0
     }
 }
 
@@ -70,10 +65,10 @@ extension AppDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let questionViewController = storyboard.instantiateViewController(identifier: "QuestionViewController") as! QuestionViewController
         questionViewController.delegate = self
-        questionViewController.title = "\(index + 1)/\(filteredQuestionsCount)"
-        questionViewController.progress = Float(index) / Float(filteredQuestionsCount)
-        let fq = filteredQuestions
-        questionViewController.question = fq[index]
+        questionViewController.title = "\(engine.index + 1)/\(engine.filteredQuestionsCount)"
+        questionViewController.progress = Float(engine.index) / Float(engine.filteredQuestionsCount)
+        let fq = engine.filteredQuestions
+        questionViewController.question = fq[engine.index]
 
         return questionViewController
     }
@@ -84,9 +79,9 @@ extension AppDelegate {
         quizResultViewController.delegate = self
         quizResultViewController.title = "Результаты"
         quizResultViewController.quizResult = QuizResult(
-            questionsCount: filteredQuestionsCount,
-            correctAnswersCount: correctAnswersCount,
-            wrongAnswersCount: wrongAnswersCount)
+            questionsCount: engine.filteredQuestionsCount,
+            correctAnswersCount: engine.correctAnswersCount,
+            wrongAnswersCount: engine.wrongAnswersCount)
 
         return quizResultViewController
     }
@@ -108,7 +103,7 @@ extension AppDelegate {
 
 extension AppDelegate: QuizViewControllerDelegate {
     func didTapSegmentedControl(at index: Int) {
-        complexity = Complexity(rawValue: index)!
+        engine.complexity = Complexity(rawValue: index)!
     }
     
     func didTapStartButton() {
@@ -127,22 +122,22 @@ extension AppDelegate: QuestionViewControllerDelegate {
     }
     
     private func answerQuestion(_ chosenOption: String) {
-        let fq = filteredQuestions
-        if fq[index].correctAnswer == chosenOption {
-            correctAnswersCount += 1
+        let fq = engine.filteredQuestions
+        if fq[engine.index].correctAnswer == chosenOption {
+            engine.correctAnswersCount += 1
         } else {
-            wrongAnswersCount += 1
+            engine.wrongAnswersCount += 1
         }
     }
 
     private func nextScreen() {
-        let notLastQuestion = index < filteredQuestionsCount - 1
+        let notLastQuestion = engine.index < engine.filteredQuestionsCount - 1
         if notLastQuestion {
-            index += 1
+            engine.index += 1
             let vc = makeQuestionViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
         } else {
-            index = 0
+            engine.index = 0
             let vc = makeQuizResultViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
         }
@@ -155,7 +150,7 @@ extension AppDelegate: QuizResultViewControllerDelegate {
     func didTapFinishButton() {
         questionNavigationController.dismiss(animated: true, completion: nil)
         
-        correctAnswersCount = 0
-        wrongAnswersCount = 0
+        engine.correctAnswersCount = 0
+        engine.wrongAnswersCount = 0
     }
 }
