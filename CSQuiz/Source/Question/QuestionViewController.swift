@@ -28,13 +28,12 @@ final class QuestionViewController: UIViewController {
             let answerButton = UIButton()
             answerButton.setTitle(answer, for: .normal)
             answerButton.setTitleColor(.systemBlue, for: .normal)
-            answerButton.titleLabel?.font = .systemFont(ofSize: 24)
+            answerButton.titleLabel?.font = .systemFont(ofSize: 20)
             answerButton.titleLabel?.numberOfLines = 2
             answerButton.layer.cornerRadius = 12
             answerButton.layer.borderWidth = 1
             answerButton.layer.borderColor = UIColor.blue.cgColor
             answerButton.backgroundColor = .systemGray5
-            answerButton.titleLabel?.adjustsFontSizeToFitWidth = true
             answerButton.tag = index
             answerButton.addTarget(self, action: #selector(handleButtonTap(sender:)), for: .touchUpInside)
 
