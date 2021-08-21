@@ -308,46 +308,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-hR-GCp">
-                                <rect key="frame" x="0.0" y="80" width="428" height="396"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MEE-uR-eHn">
+                                <rect key="frame" x="0.0" y="80" width="428" height="772"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назовите основные принципы ООП" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQP-oc-6Hq">
-                                        <rect key="frame" x="20" y="162.33333333333334" width="388" height="71.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-hR-GCp">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назовите основные принципы ООП" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQP-oc-6Hq">
+                                                <rect key="frame" x="20" y="64.333333333333343" width="388" height="71.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="sQP-oc-6Hq" firstAttribute="centerY" secondItem="XKH-hR-GCp" secondAttribute="centerY" id="5DA-bf-g6q"/>
+                                            <constraint firstAttribute="trailing" secondItem="sQP-oc-6Hq" secondAttribute="trailing" constant="20" id="R7C-vF-Ltf"/>
+                                            <constraint firstItem="sQP-oc-6Hq" firstAttribute="leading" secondItem="XKH-hR-GCp" secondAttribute="leading" constant="20" id="Vqx-lu-h5f"/>
+                                            <constraint firstAttribute="height" constant="200" id="wvd-DF-KPD"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oEL-hq-i2u">
+                                        <rect key="frame" x="20" y="200" width="388" height="488"/>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEX-hG-Zuk">
+                                        <rect key="frame" x="20" y="688" width="388" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5q-aL-abv">
+                                                <rect key="frame" x="0.0" y="20" width="388" height="64"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="ztD-eK-E4Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <state key="normal" title="Ответить">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="G5q-aL-abv" firstAttribute="leading" secondItem="OEX-hG-Zuk" secondAttribute="leading" id="6Sl-3i-Qez"/>
+                                            <constraint firstAttribute="trailing" secondItem="G5q-aL-abv" secondAttribute="trailing" id="aNP-dv-hZ9"/>
+                                            <constraint firstAttribute="bottom" secondItem="G5q-aL-abv" secondAttribute="bottom" id="cEd-0n-6wf"/>
+                                            <constraint firstAttribute="height" constant="84" id="x27-w0-PwR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="sQP-oc-6Hq" firstAttribute="centerY" secondItem="XKH-hR-GCp" secondAttribute="centerY" id="5DA-bf-g6q"/>
-                                    <constraint firstAttribute="trailing" secondItem="sQP-oc-6Hq" secondAttribute="trailing" constant="20" id="R7C-vF-Ltf"/>
-                                    <constraint firstItem="sQP-oc-6Hq" firstAttribute="leading" secondItem="XKH-hR-GCp" secondAttribute="leading" constant="20" id="Vqx-lu-h5f"/>
+                                    <constraint firstAttribute="trailing" secondItem="OEX-hG-Zuk" secondAttribute="trailing" constant="20" id="Ho8-g4-pwO"/>
+                                    <constraint firstAttribute="trailing" secondItem="oEL-hq-i2u" secondAttribute="trailing" constant="20" id="SqJ-ou-maR"/>
+                                    <constraint firstItem="OEX-hG-Zuk" firstAttribute="leading" secondItem="MEE-uR-eHn" secondAttribute="leading" constant="20" id="VSQ-f1-50W"/>
+                                    <constraint firstItem="oEL-hq-i2u" firstAttribute="leading" secondItem="MEE-uR-eHn" secondAttribute="leading" constant="20" id="icT-ag-COq"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-Kp-DZ9">
                                 <rect key="frame" x="139" y="76" width="150" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="jGV-Cl-54r"/>
                                 </constraints>
                             </progressView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oEL-hq-i2u">
-                                <rect key="frame" x="20" y="476" width="388" height="396"/>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Kj-Mq-jsD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XKH-hR-GCp" firstAttribute="leading" secondItem="2Kj-Mq-jsD" secondAttribute="leading" id="FcO-1s-5ng"/>
+                            <constraint firstItem="MEE-uR-eHn" firstAttribute="trailing" secondItem="2Kj-Mq-jsD" secondAttribute="trailing" id="0Ka-We-IRY"/>
+                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="leading" secondItem="MEE-uR-eHn" secondAttribute="leading" id="8FQ-G1-J69"/>
                             <constraint firstItem="bNo-Kp-DZ9" firstAttribute="top" secondItem="2Kj-Mq-jsD" secondAttribute="top" constant="32" id="IYN-SC-uTH"/>
                             <constraint firstItem="bNo-Kp-DZ9" firstAttribute="centerX" secondItem="cYL-oj-ust" secondAttribute="centerX" id="JlP-gb-j9a"/>
-                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="trailing" secondItem="oEL-hq-i2u" secondAttribute="trailing" constant="20" id="RV3-gM-o1e"/>
-                            <constraint firstItem="XKH-hR-GCp" firstAttribute="height" secondItem="oEL-hq-i2u" secondAttribute="height" id="ciF-Hk-nlz"/>
-                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="trailing" secondItem="XKH-hR-GCp" secondAttribute="trailing" id="eR1-6N-6LR"/>
-                            <constraint firstItem="oEL-hq-i2u" firstAttribute="leading" secondItem="2Kj-Mq-jsD" secondAttribute="leading" constant="20" id="ikk-9k-ybB"/>
-                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="bottom" secondItem="oEL-hq-i2u" secondAttribute="bottom" constant="20" id="kAa-mi-QSQ"/>
-                            <constraint firstItem="oEL-hq-i2u" firstAttribute="top" secondItem="XKH-hR-GCp" secondAttribute="bottom" id="qly-EH-W5b"/>
-                            <constraint firstItem="XKH-hR-GCp" firstAttribute="top" secondItem="bNo-Kp-DZ9" secondAttribute="bottom" id="ycl-hl-QUc"/>
+                            <constraint firstItem="MEE-uR-eHn" firstAttribute="top" secondItem="2Kj-Mq-jsD" secondAttribute="top" constant="36" id="SOD-71-WZS"/>
+                            <constraint firstItem="2Kj-Mq-jsD" firstAttribute="bottom" secondItem="MEE-uR-eHn" secondAttribute="bottom" constant="40" id="nro-eo-EYX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -364,6 +395,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
