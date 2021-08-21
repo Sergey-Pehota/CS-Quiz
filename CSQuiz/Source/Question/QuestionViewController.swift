@@ -19,7 +19,7 @@ final class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(closeTapped))
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Пропустить", style: .plain, target: self, action: #selector(closeTapped))
         progressView.setProgress(progress, animated: false)
 
         titleLabel.text = question.text
