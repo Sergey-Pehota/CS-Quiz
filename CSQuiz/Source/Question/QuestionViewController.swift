@@ -1,7 +1,7 @@
 import UIKit
 
 protocol QuestionViewControllerDelegate {
-    func didTapButton(chosenOption: String)
+    func didTapChooseButton(chosenOption: String)
     func didTapAnswerButton()
     func didTapClose()
 }
@@ -49,7 +49,7 @@ final class QuestionViewController: UIViewController {
     @objc private func handleButtonTap(sender: UIButton) {
         let chosenIndex = sender.tag
         let chosenOption = question.answers[chosenIndex]
-        delegate?.didTapButton(chosenOption: chosenOption)
+        delegate?.didTapChooseButton(chosenOption: chosenOption)
     }
     
     @objc private func closeTapped() {

@@ -102,7 +102,7 @@ extension AppDelegate: QuizViewControllerDelegate {
 // MARK: - QuestionViewControllerDelegate
 
 extension AppDelegate: QuestionViewControllerDelegate {
-    func didTapButton(chosenOption: String) {
+    func didTapChooseButton(chosenOption: String) {
         answerQuestion(chosenOption)
     }
     
