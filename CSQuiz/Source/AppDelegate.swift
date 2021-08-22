@@ -104,6 +104,9 @@ extension AppDelegate: QuizViewControllerDelegate {
 extension AppDelegate: QuestionViewControllerDelegate {
     func didTapButton(chosenOption: String) {
         answerQuestion(chosenOption)
+    }
+    
+    func didTapAnswerButton() {
         nextScreen()
     }
     
