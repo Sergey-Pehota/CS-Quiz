@@ -51,6 +51,9 @@ final class QuestionViewController: UIViewController {
         let chosenIndex = sender.tag
         let chosenOption = question.answers[chosenIndex]
         delegate?.didTapChooseButton(chosenOption: chosenOption)
+        sender.backgroundColor = .systemBlue
+        sender.setTitleColor(.white, for: .normal)
+        sender.layer.borderColor = UIColor.clear.cgColor
     }
     
     @objc private func closeTapped() {

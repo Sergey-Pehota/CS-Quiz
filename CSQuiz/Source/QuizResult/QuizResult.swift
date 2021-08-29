@@ -4,4 +4,5 @@ struct QuizResult {
     let questionsCount: Int
     let correctAnswersCount: Int
     let wrongAnswersCount: Int
+    let missedQuestionsCount: Int
 }
