@@ -66,7 +66,8 @@ extension AppDelegate {
         quizResultViewController.quizResult = QuizResult(
             questionsCount: engine.filteredQuestionsCount,
             correctAnswersCount: engine.correctAnswersCount,
-            wrongAnswersCount: engine.wrongAnswersCount)
+            wrongAnswersCount: engine.wrongAnswersCount,
+            missedQuestionsCount: engine.missedQuestionsCount)
 
         return quizResultViewController
     }
@@ -102,11 +103,18 @@ extension AppDelegate: QuizViewControllerDelegate {
 // MARK: - QuestionViewControllerDelegate
 
 extension AppDelegate: QuestionViewControllerDelegate {
+    
     func didTapChooseButton(chosenOption: String) {
         answerQuestion(chosenOption)
     }
     
     func didTapAnswerButton() {
+        nextScreen()
+    }
+    
+    func didTapSkip() {
+        engine.missedQuestionsCount += 1
+        print(engine.missedQuestionsCount)
         nextScreen()
     }
     
@@ -146,5 +154,6 @@ extension AppDelegate: QuizResultViewControllerDelegate {
         
         engine.correctAnswersCount = 0
         engine.wrongAnswersCount = 0
+        engine.missedQuestionsCount = 0
     }
 }
