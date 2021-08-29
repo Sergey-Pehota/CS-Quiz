@@ -225,28 +225,34 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKO-ND-pdC">
-                                <rect key="frame" x="20" y="124" width="388" height="150"/>
+                                <rect key="frame" x="20" y="124" width="388" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gPX-i8-VnX">
-                                        <rect key="frame" x="8" y="18" width="372" height="124"/>
+                                        <rect key="frame" x="8" y="8" width="372" height="224"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGw-ay-cNG">
-                                                <rect key="frame" x="0.0" y="0.0" width="372" height="41.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="372" height="56"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onW-Mq-Yzg">
-                                                <rect key="frame" x="0.0" y="41.333333333333343" width="372" height="41.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="56" width="372" height="56"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-2D-wkX">
-                                                <rect key="frame" x="0.0" y="82.666666666666657" width="372" height="41.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="112" width="372" height="56"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rv-qa-hRN">
+                                                <rect key="frame" x="0.0" y="168" width="372" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -259,16 +265,19 @@
                                             <constraint firstItem="KbG-2D-wkX" firstAttribute="height" secondItem="bGw-ay-cNG" secondAttribute="height" id="8hr-6h-sjB"/>
                                             <constraint firstItem="onW-Mq-Yzg" firstAttribute="leading" secondItem="gPX-i8-VnX" secondAttribute="leadingMargin" id="S30-m3-lZO"/>
                                             <constraint firstItem="onW-Mq-Yzg" firstAttribute="trailing" secondItem="gPX-i8-VnX" secondAttribute="trailingMargin" id="UHm-CX-pJa"/>
+                                            <constraint firstItem="8rv-qa-hRN" firstAttribute="height" secondItem="bGw-ay-cNG" secondAttribute="height" id="a8T-mp-c6f"/>
                                             <constraint firstItem="onW-Mq-Yzg" firstAttribute="height" secondItem="bGw-ay-cNG" secondAttribute="height" id="jIp-67-mYw"/>
                                             <constraint firstItem="KbG-2D-wkX" firstAttribute="trailing" secondItem="gPX-i8-VnX" secondAttribute="trailingMargin" id="qKY-sN-dsk"/>
+                                            <constraint firstItem="onW-Mq-Yzg" firstAttribute="height" secondItem="bGw-ay-cNG" secondAttribute="height" id="uEc-sD-cF6"/>
+                                            <constraint firstItem="KbG-2D-wkX" firstAttribute="height" secondItem="bGw-ay-cNG" secondAttribute="height" id="vXR-1H-UiI"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstItem="gPX-i8-VnX" firstAttribute="top" secondItem="sKO-ND-pdC" secondAttribute="topMargin" constant="10" id="6B5-Ef-BWJ"/>
+                                    <constraint firstItem="gPX-i8-VnX" firstAttribute="top" secondItem="sKO-ND-pdC" secondAttribute="topMargin" id="6B5-Ef-BWJ"/>
                                     <constraint firstItem="gPX-i8-VnX" firstAttribute="leading" secondItem="sKO-ND-pdC" secondAttribute="leadingMargin" id="8pG-h6-ozg"/>
-                                    <constraint firstAttribute="height" constant="150" id="GdG-zt-e7T"/>
+                                    <constraint firstAttribute="height" constant="240" id="GdG-zt-e7T"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="gPX-i8-VnX" secondAttribute="trailing" id="Vd5-L2-gBn"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="gPX-i8-VnX" secondAttribute="bottom" id="aCm-Zh-e2b"/>
                                 </constraints>
@@ -292,6 +301,7 @@
                     </view>
                     <connections>
                         <outlet property="correctAnswersLabel" destination="onW-Mq-Yzg" id="TNR-Dg-ARW"/>
+                        <outlet property="missedQuestionsLabel" destination="8rv-qa-hRN" id="KgK-q3-tXC"/>
                         <outlet property="questionsAtAllLabel" destination="bGw-ay-cNG" id="HOq-mD-i6P"/>
                         <outlet property="wrongAnswersLabel" destination="KbG-2D-wkX" id="TwG-Kd-SRK"/>
                     </connections>
