@@ -4,6 +4,7 @@ class QuizEngine {
     var index = 0
     var correctAnswersCount = 0
     var wrongAnswersCount = 0
+    var missedQuestionsCount = 0
     var complexity = Complexity.easy
     var questions = Question.all
     
