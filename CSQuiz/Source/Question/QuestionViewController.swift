@@ -3,6 +3,7 @@ import UIKit
 protocol QuestionViewControllerDelegate {
     func didTapChooseButton(chosenOption: String)
     func didTapAnswerButton()
+    func didTapSkip()
     func didTapClose()
 }
 
@@ -20,7 +21,7 @@ final class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(closeTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Пропустить", style: .plain, target: self, action: #selector(closeTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Пропустить", style: .plain, target: self, action: #selector(skipped))
         progressView.setProgress(progress, animated: false)
 
         titleLabel.text = question.text
@@ -54,5 +55,9 @@ final class QuestionViewController: UIViewController {
     
     @objc private func closeTapped() {
         delegate?.didTapClose()
+    }
+    
+    @objc private func skipped() {
+        delegate?.didTapSkip()
     }
 }
