@@ -114,7 +114,6 @@ extension AppDelegate: QuestionViewControllerDelegate {
     
     func didTapSkip() {
         engine.missedQuestionsCount += 1
-        print(engine.missedQuestionsCount)
         nextScreen()
     }
     
@@ -131,13 +130,14 @@ extension AppDelegate: QuestionViewControllerDelegate {
             engine.wrongAnswersCount += 1
         }
     }
-
+    
     private func nextScreen() {
         let notLastQuestion = engine.index < engine.filteredQuestionsCount - 1
         if notLastQuestion {
             engine.index += 1
             let vc = makeQuestionViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
+            print(engine.index)
         } else {
             engine.index = 0
             let vc = makeQuizResultViewController()

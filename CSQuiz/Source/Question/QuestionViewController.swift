@@ -16,6 +16,8 @@ final class QuestionViewController: UIViewController {
     
     var question: Question!
     var progress: Float!
+    var chosenOptionsIndices = [Int]()
+    var chosenOptionIndex: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +50,49 @@ final class QuestionViewController: UIViewController {
     }
     
     @objc private func handleButtonTap(sender: UIButton) {
-        let chosenIndex = sender.tag
-        let chosenOption = question.answers[chosenIndex]
-        delegate?.didTapChooseButton(chosenOption: chosenOption)
-        sender.backgroundColor = .systemBlue
-        sender.setTitleColor(.white, for: .normal)
-        sender.layer.borderColor = UIColor.clear.cgColor
+        let tapIndex = sender.tag
+        
+        switch question.selectionType {
+        case .multiple:
+            if let index = chosenOptionsIndices.firstIndex(of: tapIndex) {
+    //            1. Удалить этот элемент из массива
+                chosenOptionsIndices.remove(at: index)
+    //            2. Убрать выделение (кнопки)
+                sender.backgroundColor = .systemGray5
+                sender.setTitleColor(.systemBlue, for: .normal)
+                sender.layer.borderColor = UIColor.blue.cgColor
+            } else {
+                chosenOptionsIndices.append(tapIndex)
+                sender.backgroundColor = .systemBlue
+                sender.setTitleColor(.white, for: .normal)
+                sender.layer.borderColor = UIColor.clear.cgColor
+            }
+            
+        case .single:
+            chosenOptionIndex = tapIndex
+            if let allreadyChosenOptionIndex = chosenOptionIndex {
+                let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
+                button.backgroundColor = .systemGray5
+                button.setTitleColor(.systemBlue, for: .normal)
+                button.layer.borderColor = UIColor.blue.cgColor
+            } else {
+            sender.backgroundColor = .systemBlue
+            sender.setTitleColor(.white, for: .normal)
+            sender.layer.borderColor = UIColor.clear.cgColor
+            }
+        }
+        
+        
+//        let chosenOption = question.answers[chosenIndex]
+//        delegate?.didTapChooseButton(chosenOption: chosenOption)
+//        sender.backgroundColor = .systemBlue
+//        sender.setTitleColor(.white, for: .normal)
+//        sender.layer.borderColor = UIColor.clear.cgColor
+        
+        
+        
+        
+
     }
     
     @objc private func closeTapped() {
