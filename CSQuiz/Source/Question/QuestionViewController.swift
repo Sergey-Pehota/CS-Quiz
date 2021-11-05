@@ -17,6 +17,7 @@ final class QuestionViewController: UIViewController {
     var question: Question!
     var progress: Float!
     var chosenOptionsIndices = [Int]()
+//    var singleAnswersIndices = [Int]()
     var chosenOptionIndex: Int?
 
     override func viewDidLoad() {
@@ -69,19 +70,39 @@ final class QuestionViewController: UIViewController {
             }
             
         case .single:
-            chosenOptionIndex = tapIndex
             if let allreadyChosenOptionIndex = chosenOptionIndex {
-                let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
-                button.backgroundColor = .systemGray5
-                button.setTitleColor(.systemBlue, for: .normal)
-                button.layer.borderColor = UIColor.blue.cgColor
+                chosenOptionIndex = nil
+                if allreadyChosenOptionIndex == tapIndex {
+                    let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
+                   removeSelection(button)
+                } else {
+                    chosenOptionIndex = tapIndex
+                    select(sender)
+                    let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
+                    removeSelection(button)
+                }
             } else {
-            sender.backgroundColor = .systemBlue
-            sender.setTitleColor(.white, for: .normal)
-            sender.layer.borderColor = UIColor.clear.cgColor
+                chosenOptionIndex = tapIndex
+                select(sender)
             }
+//
+//            singleAnswersIndices.append(tapIndex)
+//            let firstIndex = singleAnswersIndices[0]
+//            if singleAnswersIndices.count == 1 {
+//                let button = answersStackView.subviews[firstIndex] as! UIButton
+//                select(button)
+//            } else if singleAnswersIndices.count > 1 && firstIndex == singleAnswersIndices[1] {
+//                removeSelection(sender)
+//                singleAnswersIndices.remove(at: 0)
+//            } else if singleAnswersIndices.count > 1 {
+//                let secondIndex = singleAnswersIndices[1]
+//                let button = answersStackView.subviews[firstIndex] as! UIButton
+//               removeSelection(button)
+//                let secondButton = answersStackView.subviews[secondIndex] as! UIButton
+//                select(secondButton)
+//                singleAnswersIndices.remove(at: 0)
+//            }
         }
-        
         
 //        let chosenOption = question.answers[chosenIndex]
 //        delegate?.didTapChooseButton(chosenOption: chosenOption)
@@ -89,9 +110,18 @@ final class QuestionViewController: UIViewController {
 //        sender.setTitleColor(.white, for: .normal)
 //        sender.layer.borderColor = UIColor.clear.cgColor
         
-        
-        
-        
+    }
+    
+    func select(_ sender: UIButton) {
+        sender.backgroundColor = .systemBlue
+        sender.setTitleColor(.white, for: .normal)
+        sender.layer.borderColor = UIColor.clear.cgColor
+    }
+    
+    func removeSelection(_ button: UIButton) {
+        button.backgroundColor = .systemGray5
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.layer.borderColor = UIColor.blue.cgColor
 
     }
     
