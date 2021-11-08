@@ -52,6 +52,9 @@ final class QuestionViewController: UIViewController {
     
     @objc private func handleButtonTap(sender: UIButton) {
         let tapIndex = sender.tag
+        let chosenOption = question.answers[tapIndex]
+        delegate?.didTapChooseButton(chosenOption: chosenOption)
+
         
         switch question.selectionType {
         case .multiple:
@@ -103,13 +106,6 @@ final class QuestionViewController: UIViewController {
 //                singleAnswersIndices.remove(at: 0)
 //            }
         }
-        
-//        let chosenOption = question.answers[chosenIndex]
-//        delegate?.didTapChooseButton(chosenOption: chosenOption)
-//        sender.backgroundColor = .systemBlue
-//        sender.setTitleColor(.white, for: .normal)
-//        sender.layer.borderColor = UIColor.clear.cgColor
-        
     }
     
     func select(_ sender: UIButton) {
