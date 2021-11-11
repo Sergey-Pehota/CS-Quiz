@@ -54,7 +54,6 @@ final class QuestionViewController: UIViewController {
         let tapIndex = sender.tag
         let chosenOption = question.answers[tapIndex]
         delegate?.didTapChooseButton(chosenOption: chosenOption)
-
         
         switch question.selectionType {
         case .multiple:
