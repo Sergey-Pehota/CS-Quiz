@@ -1,8 +1,7 @@
 import UIKit
 
 protocol QuestionViewControllerDelegate {
-    func didTapChooseButton(chosenOption: String)
-    func didTapAnswerButton()
+    func didTapAnswerButton(chosenOptionsIndices: [Int])
     func didTapSkip()
     func didTapClose()
 }
@@ -10,6 +9,7 @@ protocol QuestionViewControllerDelegate {
 final class QuestionViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var answersStackView: UIStackView!
     
     var delegate: QuestionViewControllerDelegate?
@@ -17,7 +17,6 @@ final class QuestionViewController: UIViewController {
     var question: Question!
     var progress: Float!
     var chosenOptionsIndices = [Int]()
-//    var singleAnswersIndices = [Int]()
     var chosenOptionIndex: Int?
 
     override func viewDidLoad() {
@@ -28,6 +27,14 @@ final class QuestionViewController: UIViewController {
         progressView.setProgress(progress, animated: false)
 
         titleLabel.text = question.text
+        
+        switch question.answerType {
+        case .multiple:
+            promptLabel.text = "Выберите несколько вариантов ответа"
+            
+        case.single:
+            promptLabel.text = "Выберите один вариант ответа"
+            }
 
         question.answers.enumerated().forEach { index, answer in
             let answerButton = UIButton()
@@ -47,20 +54,24 @@ final class QuestionViewController: UIViewController {
     }
 
     @IBAction func answerButtonAction(_ sender: Any) {
-        delegate?.didTapAnswerButton()
+        switch question.answerType {
+        case .multiple where chosenOptionsIndices.count > 0:
+            delegate?.didTapAnswerButton(chosenOptionsIndices: chosenOptionsIndices)
+            
+        case .single where chosenOptionIndex != nil:
+            delegate?.didTapAnswerButton(chosenOptionsIndices: [chosenOptionIndex!])
+        
+        default: break
+        }
     }
     
     @objc private func handleButtonTap(sender: UIButton) {
         let tapIndex = sender.tag
-        let chosenOption = question.answers[tapIndex]
-        delegate?.didTapChooseButton(chosenOption: chosenOption)
         
-        switch question.selectionType {
+        switch question.answerType {
         case .multiple:
             if let index = chosenOptionsIndices.firstIndex(of: tapIndex) {
-    //            1. Удалить этот элемент из массива
                 chosenOptionsIndices.remove(at: index)
-    //            2. Убрать выделение (кнопки)
                 sender.backgroundColor = .systemGray5
                 sender.setTitleColor(.systemBlue, for: .normal)
                 sender.layer.borderColor = UIColor.blue.cgColor
@@ -76,7 +87,7 @@ final class QuestionViewController: UIViewController {
                 chosenOptionIndex = nil
                 if allreadyChosenOptionIndex == tapIndex {
                     let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
-                   removeSelection(button)
+                    removeSelection(button)
                 } else {
                     chosenOptionIndex = tapIndex
                     select(sender)
@@ -87,23 +98,6 @@ final class QuestionViewController: UIViewController {
                 chosenOptionIndex = tapIndex
                 select(sender)
             }
-//
-//            singleAnswersIndices.append(tapIndex)
-//            let firstIndex = singleAnswersIndices[0]
-//            if singleAnswersIndices.count == 1 {
-//                let button = answersStackView.subviews[firstIndex] as! UIButton
-//                select(button)
-//            } else if singleAnswersIndices.count > 1 && firstIndex == singleAnswersIndices[1] {
-//                removeSelection(sender)
-//                singleAnswersIndices.remove(at: 0)
-//            } else if singleAnswersIndices.count > 1 {
-//                let secondIndex = singleAnswersIndices[1]
-//                let button = answersStackView.subviews[firstIndex] as! UIButton
-//               removeSelection(button)
-//                let secondButton = answersStackView.subviews[secondIndex] as! UIButton
-//                select(secondButton)
-//                singleAnswersIndices.remove(at: 0)
-//            }
         }
     }
     

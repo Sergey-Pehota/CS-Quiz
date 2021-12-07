@@ -103,12 +103,28 @@ extension AppDelegate: QuizViewControllerDelegate {
 // MARK: - QuestionViewControllerDelegate
 
 extension AppDelegate: QuestionViewControllerDelegate {
-    
-    func didTapChooseButton(chosenOption: String) {
-        answerQuestion(chosenOption)
-    }
-    
-    func didTapAnswerButton() {
+    func didTapAnswerButton(chosenOptionsIndices: [Int]) {
+//        1. взять текущий вопрос
+        let fq = engine.filteredQuestions
+        let question = fq[engine.index]
+//        2. взять правильные ответы
+        switch question.answerType {
+        case .multiple(let correctAnswers):
+            if chosenOptionsIndices.sorted() == correctAnswers.sorted() {
+                engine.correctAnswersCount += 1
+            } else {
+                engine.wrongAnswersCount += 1
+            }
+            
+        case .single(let correctAnswer):
+//            содержит ли массив chosenOptionsIndices индекс correctAnswer
+            if chosenOptionsIndices.contains(correctAnswer) {
+                engine.correctAnswersCount += 1
+            } else {
+                engine.wrongAnswersCount += 1
+            }
+        }
+//        3. сравнить индексы
         nextScreen()
     }
     
@@ -122,14 +138,14 @@ extension AppDelegate: QuestionViewControllerDelegate {
         engine.finish()
     }
     
-    private func answerQuestion(_ chosenOption: String) {
-        let fq = engine.filteredQuestions
-        if fq[engine.index].correctAnswer == chosenOption {
-            engine.correctAnswersCount += 1
-        } else {
-            engine.wrongAnswersCount += 1
-        }
-    }
+//    private func answerQuestion(_ chosenOption: String) {
+//        let fq = engine.filteredQuestions
+//        if fq[engine.index].correctAnswers == chosenOption {
+//            engine.correctAnswersCount += 1
+//        } else {
+//            engine.wrongAnswersCount += 1
+//        }
+//    }
     
     private func nextScreen() {
         let notLastQuestion = engine.index < engine.filteredQuestionsCount - 1
