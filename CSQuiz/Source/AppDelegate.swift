@@ -125,7 +125,10 @@ extension AppDelegate: QuestionViewControllerDelegate {
             }
         }
 //        3. сравнить индексы
-        nextScreen()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.nextScreen()
+        }
+        
     }
     
     func didTapSkip() {
