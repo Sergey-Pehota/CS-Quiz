@@ -1,7 +1,7 @@
 import UIKit
 
 protocol QuestionViewControllerDelegate {
-    func didTapAnswerButton(chosenOptionsIndices: [Int])
+    func didTapAnswerButton(chosenOptionsIndices: Set<Int>)
     func didTapSkip()
     func didTapClose()
 }
@@ -16,7 +16,7 @@ final class QuestionViewController: UIViewController {
     
     var question: Question!
     var progress: Float!
-    var chosenOptionsIndices = [Int]()
+    var chosenOptionsIndices = Set<Int>()
     var chosenOptionIndex: Int?
 
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ final class QuestionViewController: UIViewController {
                 sender.setTitleColor(.systemBlue, for: .normal)
                 sender.layer.borderColor = UIColor.blue.cgColor
             } else {
-                chosenOptionsIndices.append(tapIndex)
+                chosenOptionsIndices.insert(tapIndex)
                 sender.backgroundColor = .systemBlue
                 sender.setTitleColor(.white, for: .normal)
                 sender.layer.borderColor = UIColor.clear.cgColor
@@ -122,3 +122,4 @@ final class QuestionViewController: UIViewController {
         delegate?.didTapSkip()
     }
 }
+

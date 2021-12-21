@@ -103,14 +103,14 @@ extension AppDelegate: QuizViewControllerDelegate {
 // MARK: - QuestionViewControllerDelegate
 
 extension AppDelegate: QuestionViewControllerDelegate {
-    func didTapAnswerButton(chosenOptionsIndices: [Int]) {
+    func didTapAnswerButton(chosenOptionsIndices: Set<Int>) {
 //        1. взять текущий вопрос
         let fq = engine.filteredQuestions
         let question = fq[engine.index]
 //        2. взять правильные ответы
         switch question.answerType {
         case .multiple(let correctAnswers):
-            if chosenOptionsIndices.sorted() == correctAnswers.sorted() {
+            if chosenOptionsIndices == correctAnswers {
                 engine.correctAnswersCount += 1
             } else {
                 engine.wrongAnswersCount += 1

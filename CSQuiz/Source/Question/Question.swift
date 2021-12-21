@@ -9,7 +9,7 @@ struct Question {
 
 enum AnswerType {
     case single(correctAnswer: Int)
-    case multiple(correctAnswers: [Int])
+    case multiple(correctAnswers: Set<Int>)
 }
 
 extension Question {
