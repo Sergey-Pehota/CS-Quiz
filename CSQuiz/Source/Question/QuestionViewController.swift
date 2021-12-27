@@ -54,22 +54,23 @@ final class QuestionViewController: UIViewController {
     }
 
     @IBAction func answerButtonAction(_ sender: UIButton) {
+        let subviews = answersStackView.arrangedSubviews
         switch question.answerType {
         case .multiple(let correctAnswers) where chosenOptionsIndices.count > 0:
             delegate?.didTapAnswerButton(chosenOptionsIndices: chosenOptionsIndices)
             for index in chosenOptionsIndices {
                 if correctAnswers.contains(index) {
-                    answersStackView.arrangedSubviews[index].backgroundColor = .systemGreen
+                    subviews[index].backgroundColor = .systemGreen
                 } else {
-                    answersStackView.arrangedSubviews[index].backgroundColor = .systemRed
+                    subviews[index].backgroundColor = .systemRed
                 }
             }
         case .single(let correctAnswer) where chosenOptionIndex != nil:
             delegate?.didTapAnswerButton(chosenOptionsIndices: [chosenOptionIndex!])
             if correctAnswer == chosenOptionIndex {
-                answersStackView.arrangedSubviews[chosenOptionIndex!].backgroundColor = .systemGreen
+                subviews[chosenOptionIndex!].backgroundColor = .systemGreen
             } else {
-                answersStackView.arrangedSubviews[chosenOptionIndex!].backgroundColor = .systemRed
+                subviews[chosenOptionIndex!].backgroundColor = .systemRed
             }
         default: break
         }
