@@ -64,9 +64,13 @@ final class QuestionViewController: UIViewController {
                     answersStackView.arrangedSubviews[index].backgroundColor = .systemRed
                 }
             }
-        case .single where chosenOptionIndex != nil:
+        case .single(let correctAnswer) where chosenOptionIndex != nil:
             delegate?.didTapAnswerButton(chosenOptionsIndices: [chosenOptionIndex!])
-        
+            if correctAnswer == chosenOptionIndex {
+                answersStackView.arrangedSubviews[chosenOptionIndex!].backgroundColor = .systemGreen
+            } else {
+                answersStackView.arrangedSubviews[chosenOptionIndex!].backgroundColor = .systemRed
+            }
         default: break
         }
     }
