@@ -156,7 +156,6 @@ extension AppDelegate: QuestionViewControllerDelegate {
             engine.index += 1
             let vc = makeQuestionViewController()
             questionNavigationController.setViewControllers([vc], animated: true)
-            print(engine.index)
         } else {
             engine.index = 0
             let vc = makeQuizResultViewController()
