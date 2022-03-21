@@ -83,14 +83,10 @@ final class QuestionViewController: UIViewController {
         case .multiple:
             if let index = chosenOptionsIndices.firstIndex(of: tapIndex) {
                 chosenOptionsIndices.remove(at: index)
-                sender.backgroundColor = .systemGray5
-                sender.setTitleColor(.systemBlue, for: .normal)
-                sender.layer.borderColor = UIColor.blue.cgColor
+                removeSelection(sender)
             } else {
                 chosenOptionsIndices.insert(tapIndex)
-                sender.backgroundColor = .systemBlue
-                sender.setTitleColor(.white, for: .normal)
-                sender.layer.borderColor = UIColor.clear.cgColor
+                select(sender)
             }
             
         case .single:
