@@ -10,6 +10,7 @@ final class QuestionViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!
+    @IBOutlet weak var answerButton: UIButton!
     @IBOutlet weak var answersStackView: UIStackView!
     
     var delegate: QuestionViewControllerDelegate?
@@ -51,6 +52,8 @@ final class QuestionViewController: UIViewController {
 
             answersStackView.addArrangedSubview(answerButton)
         }
+        
+        answerButton.isEnabled = false
     }
 
     @IBAction func answerButtonAction(_ sender: UIButton) {
@@ -84,9 +87,16 @@ final class QuestionViewController: UIViewController {
             if let index = chosenOptionsIndices.firstIndex(of: tapIndex) {
                 chosenOptionsIndices.remove(at: index)
                 removeSelection(sender)
+                print(chosenOptionsIndices)
+                if chosenOptionsIndices.count == 0 {
+                    answerButton.isEnabled = false
+                } else if chosenOptionsIndices.count > 0 {
+                    answerButton.isEnabled = true
+                }
             } else {
                 chosenOptionsIndices.insert(tapIndex)
                 select(sender)
+                answerButton.isEnabled = true
             }
             
         case .single:
@@ -95,15 +105,18 @@ final class QuestionViewController: UIViewController {
                 if allreadyChosenOptionIndex == tapIndex {
                     let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
                     removeSelection(button)
+                    answerButton.isEnabled = false
                 } else {
                     chosenOptionIndex = tapIndex
                     select(sender)
+                    answerButton.isEnabled = true
                     let button = answersStackView.subviews[allreadyChosenOptionIndex] as! UIButton
                     removeSelection(button)
                 }
             } else {
                 chosenOptionIndex = tapIndex
                 select(sender)
+                answerButton.isEnabled = true
             }
         }
     }
