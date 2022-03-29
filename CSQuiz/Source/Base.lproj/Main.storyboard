@@ -70,8 +70,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-Ho-CQZ">
                                                 <rect key="frame" x="0.0" y="173.33333333333331" width="348" height="66.666666666666686"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правильные ответы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-I4-SNS">
-                                                        <rect key="frame" x="20" y="20.333333333333371" width="239" height="26.333333333333329"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правильные ответы" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-I4-SNS">
+                                                        <rect key="frame" x="20" y="20.333333333333371" width="205.66666666666666" height="26.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -83,7 +83,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="gTs-I4-SNS" firstAttribute="leading" secondItem="dsq-Ho-CQZ" secondAttribute="leading" constant="20" id="HWy-Qd-A3h"/>
-                                                    <constraint firstItem="r23-yU-YuC" firstAttribute="leading" secondItem="gTs-I4-SNS" secondAttribute="trailing" constant="20" id="JJw-71-drR"/>
                                                     <constraint firstItem="r23-yU-YuC" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="LL3-Il-OCI"/>
                                                     <constraint firstAttribute="trailing" secondItem="r23-yU-YuC" secondAttribute="trailing" constant="20" id="czK-1x-xDM"/>
                                                     <constraint firstItem="gTs-I4-SNS" firstAttribute="centerY" secondItem="dsq-Ho-CQZ" secondAttribute="centerY" id="uaB-GO-SMm"/>
