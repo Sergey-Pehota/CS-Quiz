@@ -78,6 +78,9 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r23-yU-YuC">
                                                         <rect key="frame" x="279" y="18" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="showCorrectAnswers:" destination="8be-c7-vhV" eventType="valueChanged" id="0Vm-5Z-Mlt"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,6 +120,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="correctAnswers" destination="r23-yU-YuC" id="WQM-t9-lru"/>
                         <outlet property="soundLabel" destination="4RN-65-pus" id="CDA-qw-NDh"/>
                         <outlet property="soundSwitch" destination="rFq-sl-dOY" id="ZNo-gV-gjp"/>
                     </connections>

@@ -54,6 +54,7 @@ extension AppDelegate {
         questionViewController.progress = Float(engine.index) / Float(engine.filteredQuestionsCount)
         let fq = engine.filteredQuestions
         questionViewController.question = fq[engine.index]
+        questionViewController.correctAnswerShow = engine.correctAnswersShow
 
         return questionViewController
     }
@@ -75,6 +76,7 @@ extension AppDelegate {
     func makeSettingsViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let settingsViewController = storyboard.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController
+        settingsViewController.delegate = self
         settingsViewController.title = "Настройки"
         let image = UIImage(systemName: "hand.point.right")
         settingsViewController.tabBarItem = UITabBarItem(title: "Настройки", image: image, tag: 0)
@@ -173,5 +175,11 @@ extension AppDelegate: QuizResultViewControllerDelegate {
         engine.correctAnswersCount = 0
         engine.wrongAnswersCount = 0
         engine.missedQuestionsCount = 0
+    }
+}
+
+extension AppDelegate: SettingsViewControllerDelegate {
+    func didTapCorrectAnswersSwitch() {
+        engine.correctAnswersShow = !engine.correctAnswersShow
     }
 }

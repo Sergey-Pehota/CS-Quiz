@@ -19,6 +19,7 @@ final class QuestionViewController: UIViewController {
     var progress: Float!
     var chosenOptionsIndices = Set<Int>()
     var chosenOptionIndex: Int?
+    var correctAnswerShow = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,19 +62,23 @@ final class QuestionViewController: UIViewController {
         switch question.answerType {
         case .multiple(let correctAnswers) where chosenOptionsIndices.count > 0:
             delegate?.didTapAnswerButton(chosenOptionsIndices: chosenOptionsIndices)
-            for index in chosenOptionsIndices {
-                if correctAnswers.contains(index) {
-                    subviews[index].backgroundColor = .systemGreen
-                } else {
-                    subviews[index].backgroundColor = .systemRed
+            if  correctAnswerShow {
+                for index in chosenOptionsIndices {
+                    if correctAnswers.contains(index) {
+                        subviews[index].backgroundColor = .systemGreen
+                    } else {
+                        subviews[index].backgroundColor = .systemRed
+                    }
                 }
             }
         case .single(let correctAnswer) where chosenOptionIndex != nil:
             delegate?.didTapAnswerButton(chosenOptionsIndices: [chosenOptionIndex!])
-            if correctAnswer == chosenOptionIndex {
-                subviews[chosenOptionIndex!].backgroundColor = .systemGreen
-            } else {
-                subviews[chosenOptionIndex!].backgroundColor = .systemRed
+            if correctAnswerShow {
+                if correctAnswer == chosenOptionIndex {
+                    subviews[chosenOptionIndex!].backgroundColor = .systemGreen
+                } else {
+                    subviews[chosenOptionIndex!].backgroundColor = .systemRed
+                }
             }
         default: break
         }
@@ -81,7 +86,6 @@ final class QuestionViewController: UIViewController {
     
     @objc private func handleButtonTap(sender: UIButton) {
         let tapIndex = sender.tag
-        
         switch question.answerType {
         case .multiple:
             if let index = chosenOptionsIndices.firstIndex(of: tapIndex) {
