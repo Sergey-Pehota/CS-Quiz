@@ -7,7 +7,7 @@ class QuizEngine {
     var missedQuestionsCount = 0
     var complexity = Complexity.easy
     var questions = Question.all
-    var correctAnswersShow = true
+    var correctAnswerShow = true
     
     var filteredQuestions: [Question] {
         questions.filter { $0.complexity == complexity }
