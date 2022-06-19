@@ -54,7 +54,7 @@ extension AppDelegate {
         questionViewController.progress = Float(engine.index) / Float(engine.filteredQuestionsCount)
         let fq = engine.filteredQuestions
         questionViewController.question = fq[engine.index]
-        questionViewController.correctAnswerShow = engine.
+        questionViewController.correctAnswerShow = engine.showCorrectAnswers
 
         return questionViewController
     }
@@ -180,6 +180,6 @@ extension AppDelegate: QuizResultViewControllerDelegate {
 
 extension AppDelegate: SettingsViewControllerDelegate {
     func didTapCorrectAnswersSwitch() {
-        engine. = !engine.
+        engine.showCorrectAnswers = !engine.showCorrectAnswers
     }
 }
